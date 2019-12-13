@@ -11,6 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
     <link rel="stylesheet" href="/app/assets/style.css">
 
     <title>HelpOS - Serviços na ponta do click</title>
@@ -19,30 +20,29 @@
 <body>
 
     <header class="sticky-top">
-        <!-- tenho que deixar essa sombra sobre o nav de baixo -->
-        <nav class="navbar navbar-dark bg-primary shadow position">
-            <div>
-                <ul class="navbar nav justify-content-center">
-                    <li class="nav-item">
-                        <a href="" class="nav-link text-light">Ticket</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="navbar-brand">LOGO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link text-light">usuario</a>
-                    </li>
-                </ul>
-            </div>
+        <!-- PRIMEIRO NAV  -->
+        <nav class="navbar-nav navbar-dark bg-primary shadow position">
+            <ul class="navbar nav justify-content-around py-4">
+                <li class="nav-item">
+                    <a href="" class="nav-link text-light"><i class="fas fa-search fa-2x"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="navbar-brand">LOGO</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link text-light"><i class="fas fa-user-circle fa-2x"></i></a>
+                </li>
+            </ul>
         </nav>
 
-        <nav class="navbar navbar-light bg-light shadow">
-            <ul class="navbar nav justify-content-around">
+        <!-- SEGUNDO NAV -->
+        <nav class="navbar-nav navbar-light bg-light shadow">
+            <ul class="navbar nav justify-content-around py-3 container">
                 <li class="nav-item">
                     <a href="" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">Ticket</a>
+                    <a href="" class="nav-link">Tickets</a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">Relatório</a>
@@ -54,14 +54,13 @@
         </nav>
     </header>
 
-    <div class="container my-5">
+    <!-- CONTEUDO DAS ORDENS DE SERVIÇO  -->
+    <div class="container conteudo shadow">
         <table class="table table-striped">
             <thead>
-                <ul class="nav bg-dark">
-                    <li class="nav-item">
-                        <h2 class="text-light">Tickets</h2>
-                    </li>
-                </ul>
+                <div class="bg-dark text-light py-1 text-center">
+                    <h3>Tickets</h3>
+                </div>
             </thead>
             <thead>
                 <tr>
@@ -90,11 +89,67 @@
                     <td>the Bird</td>
                     <td>@twitter</td>
                 </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
             </tbody>
         </table>
     </div>
 
+    <!-- RODAPE DA PAGINA  -->
+    <footer class="bg-light">
+        <div class="container ">
+            <div class="py-5 text-center">
+                <h1 class="display-4">HelpOS - Serviços na ponta do click</h1>
+                <h4 class="lead">Desenvolvido por Matheus Brunelli & Armando Bretas</h4>
+            </div>
+            <div class="text-center pb-4">
+                <h2 class="font-weight-light">Entre em contato conosco</h2>
+            </div>
+            <div class="row text-center">
+                <div class="col-6">
+                    <ul>
+                        <li>
+                            <!-- CONTATO DOS DESENVOLVEDORES  -->
+                            <p class="lead">Matheus Brunelli</p>
+                            <p><i class="fas fa-phone-alt"></i> Ramal: 5952</p>
+                            <p><i class="fas fa-envelope"></i> matheus.brunelli@gazin.com.br</p>
+                            <p><i class="fab fa-github"></i><a href="https://github.com/mrbrunelli"> github.com/mrbrunelli</a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li>
+                            <!-- CONTATO DOS DESENVOLVEDORES  -->
+                            <p class="lead">Armando Bretas</p>
+                            <p><i class="fas fa-phone-alt"></i> Ramal: 5952</p>
+                            <p><i class="fas fa-envelope"></i> armando.luiz@gazin.com.br</p>
+                            <p><i class="fab fa-github"></i><a href="https://github.com/armandobretas"> github.com/armandobretas</a></p>
+                        </li>
+                    </ul>
 
+                </div>
+            </div>
+            <!-- FIM DA DIV ROW  -->
+
+            <div class="text-center py-5">
+                <h4 class="lead text-muted">Todos os direitos resevados - 2019</h4>
+            </div>
+
+        </div>
+        <!-- FIM DO CONTAINER  -->
+
+    </footer>
 
 
 

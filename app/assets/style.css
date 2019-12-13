@@ -1,9 +1,19 @@
     @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
     .position {
-        z-index: inherit;
+        position: inherit;
     }
-    
-    body {
+    /* ------------------------------------------------ CONTEUDO DA PAGINA */
+    /* body {
         margin: 0;
         font-family: 'Open Sans', 'Montserrat', Arial;
+    } */
+    
+    .conteudo {
+        margin-top: 4em;
+        margin-bottom: 4em;
+    }
+    /* ---------------------------------------------------- RODAPE DA PAGINA */
+    
+    ul {
+        list-style: none;
     }
