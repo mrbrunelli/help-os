@@ -8,11 +8,35 @@
         font-family: 'Open Sans', 'Montserrat', Arial;
     } */
     
+    .row {
+        margin: 0;
+    }
+    
     .conteudo {
         margin-bottom: 7em;
     }
-    /* ---------------------------------------------------- RODAPE DA PAGINA */
+    
+    .btn-add {
+        background-color: #007bff;
+        color: white;
+        display: block;
+        height: 3em;
+        width: 3em;
+        border-radius: 50%;
+        border: none;
+        transition: 0.2s;
+    }
+    
+    .btn-add:hover {
+        transform: scale(1.2);
+    }
+    /* ---------------------------------------------------- FOOTER DA PAGINA */
     
     ul {
         list-style: none;
+    }
+    
+    .margem {
+        padding-top: 6em;
+        padding-bottom: 6em;
     }

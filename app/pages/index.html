@@ -22,15 +22,15 @@
     <header class="sticky-top">
         <!-- PRIMEIRO NAV  -->
         <nav class="navbar-nav navbar-dark bg-primary shadow position">
-            <ul class="navbar nav justify-content-around py-4">
+            <ul class="navbar nav justify-content-between py-4">
                 <li class="nav-item">
-                    <a href="" class="nav-link text-light"><i class="fas fa-search fa-2x"></i></a>
+                    <a href="" class="nav-link text-light ml-5"><i class="fas fa-search "></i></a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="navbar-brand">LOGO</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-light"><i class="fas fa-user-circle fa-2x"></i></a>
+                    <a href="" class="nav-link text-light mr-5"><i class="fas fa-user-circle fa-2x"></i></a>
                 </li>
             </ul>
         </nav>
@@ -54,16 +54,27 @@
         </nav>
     </header>
 
-    <div class="text-center py-5">
-        <h1 class="display-4">Abra a sua ordem de serviço</h1>
+    <div class="py-3 container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-white">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Tickets</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Relatório</li>
+            </ol>
+        </nav>
     </div>
 
     <!-- CONTEUDO DAS ORDENS DE SERVIÇO  -->
-    <div class="container conteudo shadow">
-        <table class="table table-striped">
+    <div class="container conteudo shadow" style="padding-left:0 !important; padding-right:0 !important">
+        <table class="table table-hover table-bordered">
             <thead>
-                <div class="bg-dark text-light py-1 text-center">
-                    <h3>Tickets</h3>
+                <div style="position: relative;">
+                    <div class="bg-dark text-light py-1" style="position: absolute; width: 100%;">
+                        <h3 class="text-center">Tickets</h3>
+                    </div>
+                    <div style="padding: 2%; position: absolute; z-index: 50; width: 100%;">
+                        <button class="btn-add" style="float: right;"><i class="fas fa-plus"></i></button>
+                    </div>
                 </div>
             </thead>
             <thead>
@@ -109,15 +120,11 @@
         </table>
     </div>
 
-    <!-- RODAPE DA PAGINA  -->
+    <!-- FOOTER DA PAGINA  -->
     <footer class="bg-light">
-        <div class="container ">
-            <div class="py-5 text-center">
-                <h1 class="display-4">HelpOS - Serviços na ponta do click</h1>
-                <h4 class="lead">Desenvolvido por Matheus Brunelli & Armando Bretas</h4>
-            </div>
-            <div class="text-center pb-4">
-                <h2 class="font-weight-light">Entre em contato conosco</h2>
+        <div class="container margem">
+            <div class="text-center pb-5">
+                <h1 class="font-weight-light">Entre em contato conosco</h2>
             </div>
             <div class="row text-center">
                 <div class="col-6">
@@ -127,7 +134,7 @@
                             <p class="lead">Matheus Brunelli</p>
                             <p><i class="fas fa-phone-alt"></i> Ramal: 5952</p>
                             <p><i class="fas fa-envelope"></i> matheus.brunelli@gazin.com.br</p>
-                            <p><i class="fab fa-github"></i><a href="https://github.com/mrbrunelli"> github.com/mrbrunelli</a></p>
+                            <p><i class="fab fa-github"></i><a href="https://github.com/mrbrunelli" target="_blank"> github.com/mrbrunelli</a></p>
                         </li>
                     </ul>
                 </div>
@@ -138,7 +145,7 @@
                             <p class="lead">Armando Bretas</p>
                             <p><i class="fas fa-phone-alt"></i> Ramal: 5952</p>
                             <p><i class="fas fa-envelope"></i> armando.luiz@gazin.com.br</p>
-                            <p><i class="fab fa-github"></i><a href="https://github.com/armandobretas"> github.com/armandobretas</a></p>
+                            <p><i class="fab fa-github"></i><a href="https://github.com/armandobretas" target="_blank"> github.com/armandobretas</a></p>
                         </li>
                     </ul>
 
@@ -149,9 +156,11 @@
         </div>
         <!-- FIM DO CONTAINER  -->
 
-        <div class="text-center py-5 bg-dark">
-            <h4 class="text-light">HelpOS</h4>
-            <h4 class="lead text-light">Todos os direitos resevados - 2019</h4>
+        <!-- SEGUNDO FOOTER  -->
+        <div class="py-5 bg-dark text-light text-center">
+            <h2 class="font-weight-light">HelpOS - Serviços na ponta do click</h2>
+            <p class="lead">Desenvolvido por Matheus Brunelli & Armando Bretas</p>
+            <p class="font-weight-light">Todos os direitos reservados - 2019</p>
         </div>
 
     </footer>
