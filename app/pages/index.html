@@ -72,12 +72,12 @@
                     <div class="bg-dark text-light py-1" style="position: absolute; width: 100%;">
                         <h3 class="text-center">Tickets</h3>
                     </div>
-                    <div style="padding: 1.5%; position: absolute; z-index: 50; width: 100%;">
-                        <button class="btn-add" style="float: right;"><i class="fas fa-plus"></i></button>
+                    <div style="padding: 1.5%; position: absolute; width: 100%;">
+                        <button type="button" class="btn-add" style="float: right;" data-toggle="modal" data-target="#adicionar"><i class="fas fa-plus"></i></button>
                     </div>
                 </div>
                 <div class="pt-5">
-
+                    <!-- DIV PARA SEPARAR O BOTAO DA DIV DE BAIXO -->
                 </div>
             </thead>
             <thead>
@@ -171,11 +171,32 @@
         </table>
     </div>
 
+    <div class="modal fade" id="adicionar" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalCentralizado">Novo Ticket</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER DA PAGINA  -->
     <footer class="bg-light">
         <div class="container margem">
             <div class="text-center pb-5">
-                <h1 class="font-weight-light">Entre em contato conosco</h2>
+                <h1 class="font-weight-light">Dúvidas?</h1>
+                <h3 class="font-weight-light">Entre em contato conosco</h3>
             </div>
             <div class="row text-center">
                 <div class="col-6">
