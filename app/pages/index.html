@@ -24,7 +24,45 @@
         <nav class="navbar-nav navbar-dark bg-primary shadow position">
             <ul class="navbar nav justify-content-between py-4">
                 <li class="nav-item">
-                    <a href="" class="nav-link text-light ml-5"><i class="fas fa-search "></i></a>
+                    <!-- <a href="" class="nav-link text-light ml-5"><i class="fas fa-search "></i></a> -->
+
+                    <!-- SEARCH BONITÃO  -->
+                    <div class="searching">
+                        <center>
+                            <a href="javascript:void(0)" class="search-open">
+                                <i class="fa fa-search text-light ml-5"></i>
+                            </a>
+                        </center>
+
+                        <div class="search-inline">
+                            <form>
+                                <input type="text" class="form-control" placeholder="Digite o número do Ticket...">
+                                <button type="submit">
+                                     <i class="fa fa-search"></i>
+                                 </button>
+                                <a href="javascript:void(0)" class="search-close">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+
+                    <script>
+                        var sp = document.querySelector('.search-open');
+                        var searchbar = document.querySelector('.search-inline');
+                        var shclose = document.querySelector('.search-close');
+
+                        function changeClass() {
+                            searchbar.classList.add('search-visible');
+                        }
+
+                        function closesearch() {
+                            searchbar.classList.remove('search-visible');
+                        }
+                        sp.addEventListener('click', changeClass);
+                        shclose.addEventListener('click', closesearch);
+                    </script>
+
                 </li>
                 <li class="nav-item">
                     <a href="" class="navbar-brand">HelpOS</a>
@@ -38,16 +76,16 @@
         <!-- SEGUNDO NAV -->
         <nav class="navbar-nav navbar-light bg-light shadow">
             <ul class="navbar nav justify-content-around py-3 container">
-                <li class="nav-item">
-                    <a href="" class="nav-link">Home</a>
+                <li class="nav-item topnav">
+                    <a href="" class="nav-link ativo">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item topnav">
                     <a href="" class="nav-link">Tickets</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item topnav">
                     <a href="" class="nav-link">Relatório</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item topnav">
                     <a href="" class="nav-link">Dashboard</a>
                 </li>
             </ul>
@@ -66,113 +104,92 @@
 
     <!-- CONTEUDO DAS ORDENS DE SERVIÇO  -->
     <div class="container conteudo shadow ml-auto mr-auto" style="padding-left:0 !important; padding-right:0 !important">
-        <table class="table table-hover table-bordered">
-            <thead>
-                <div style="position: relative;">
-                    <div class="bg-dark text-light py-1" style="position: absolute; width: 100%;">
-                        <h3 class="text-center">Tickets</h3>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered" style="margin-bottom: 0 !important;">
+                <thead>
+                    <div style="position: relative;">
+                        <div class=" text-light py-1 borda" style="position: absolute; width: 100%; background-color: #34495e;">
+                            <h3 class="text-center font-weight-light">Tickets</h3>
+                        </div>
+                        <div style="padding: 1.5%; position: absolute; width: 100%;">
+                            <button type="button" class="btn-add" style="float: right;" data-toggle="modal" data-target="#adicionar"><i class="fas fa-plus"></i></button>
+                        </div>
                     </div>
-                    <div style="padding: 1.5%; position: absolute; width: 100%;">
-                        <button type="button" class="btn-add" style="float: right;" data-toggle="modal" data-target="#adicionar"><i class="fas fa-plus"></i></button>
+                    <div class="pt-5">
+                        <!-- DIV PARA SEPARAR O BOTAO DA DIV DE BAIXO -->
                     </div>
-                </div>
-                <div class="pt-5">
-                    <!-- DIV PARA SEPARAR O BOTAO DA DIV DE BAIXO -->
-                </div>
-            </thead>
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Título</th>
-                    <th scope="col">Entidade</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Última atualização</th>
-                    <th scope="col">Data abertura</th>
-                    <th scope="col">Prioridade</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Atendente</th>
-                    <th scope="col">Requerente</th>
-                    <th scope="col">Tempo da solução</th>
-                    <th scope="col">Urgencia</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
-        </table>
+                </thead>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Dt. abertura</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Requerente</th>
+                        <th scope="col">Atendente</th>
+                        <th scope="col">Progresso</th>
+                        <th scope="col">Prioridade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td><img src="/app/assets/img/user.png" width="30px" alt=""> - Matheus</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar alta" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </td>
+                        <td class="alta">Alta</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                        <td><img src="/app/assets/img/user.png" width="30px" alt=""> - </td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar baixa" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </td>
+                        <td class="baixa">Baixa</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td><img src="/app/assets/img/user.png" width="30px" alt=""> - Armando</td>
+                        <td>
+                            <div class="progress">
+                                <div class="progress-bar media" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </td>
+                        <td class="media">Média</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div class="modal fade" id="adicionar" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="TituloModalCentralizado">Novo Ticket</h5>
@@ -181,11 +198,61 @@
               </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="container-fluid">
+                        <!-- FORMULARIO DE TICKETS -->
+                        <form action="" method="post">
+
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="">Tipo: </label>
+                                        <select name="" id="" class="form-control">
+                                            <option value="">Tipo 1</option>
+                                            <option value="">Tipo 2</option>
+                                            <option value="">Tipo 3</option>
+                                            <option value="">Tipo 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="">Categoria: </label>
+                                        <select name="" id="" class="form-control">
+                                        <option value="">Categoria 1</option>
+                                        <option value="">Categoria 2</option>
+                                        <option value="">Categoria 3</option>
+                                        <option value="">Categoria 4</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="">Título: </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="">Anexos: </label>
+                                        <input type="file" name="anexo[]" multiple="multiple" id="" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="">Descrição: </label>
+                                        <textarea class="form-control" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success">Salvar</button>
                 </div>
             </div>
         </div>
@@ -204,7 +271,7 @@
                         <li>
                             <!-- CONTATO DOS DESENVOLVEDORES  -->
                             <p class="lead">Matheus Brunelli</p>
-                            <p><i class="fas fa-phone-alt"></i> Ramal: 5952</p>
+                            <p><i class="fas fa-phone-alt"></i> Ramal: 2832</p>
                             <p><i class="fas fa-envelope"></i> matheus.brunelli@gazin.com.br</p>
                             <p><i class="fab fa-github"></i><a href="https://github.com/mrbrunelli" target="_blank"> github.com/mrbrunelli</a></p>
                         </li>
@@ -215,7 +282,7 @@
                         <li>
                             <!-- CONTATO DOS DESENVOLVEDORES  -->
                             <p class="lead">Armando Bretas</p>
-                            <p><i class="fas fa-phone-alt"></i> Ramal: 5952</p>
+                            <p><i class="fas fa-phone-alt"></i> Ramal: 2832</p>
                             <p><i class="fas fa-envelope"></i> armando.luiz@gazin.com.br</p>
                             <p><i class="fab fa-github"></i><a href="https://github.com/armandobretas" target="_blank"> github.com/armandobretas</a></p>
                         </li>
@@ -245,6 +312,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
