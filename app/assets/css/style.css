@@ -30,6 +30,8 @@
         left: 10%;
         position: absolute;
         top: 25%;
+        border-radius: 30px;
+        padding: 20px;
     }
     
     #background-login {
