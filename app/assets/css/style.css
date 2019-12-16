@@ -27,17 +27,16 @@
     #div-center {
         width: 400px;
         height: 500px;
-        left: 20%;
-        margin: -130px 0 0 -210px;
-        padding: 10px;
+        left: 10%;
         position: absolute;
-        top: 40%;
+        top: 25%;
     }
     
     #background-login {
         background-image: url(../img/backlogin.png);
         background-size: cover;
         background-repeat: no-repeat;
+        overflow: hidden;
     }
     
     .font-weight-lighter {
@@ -51,7 +50,7 @@
     }
     
     .sombra {
-        box-shadow: 0px 6px 4px 0px rgba(0, 0, 0, 0.60);
+        box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.50);
     }
     
     .row {
@@ -86,7 +85,7 @@
     
     .btn-add:hover {
         transform: scale(1.2);
-        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.50);
     }
     
     .alta {
@@ -113,7 +112,7 @@
         padding-top: 6em;
         padding-bottom: 6em;
     }
-    /* ----------------------------------------------SEARCH START  */
+    /* ---------------------------------------------- BOTAO SEARCH START  */
     
     .search-inline {
         width: 100%;
@@ -148,7 +147,7 @@
         cursor: pointer;
         width: 80px;
         height: 99%;
-        background: #222;
+        background: #007bff;
         color: #fff;
     }
     
