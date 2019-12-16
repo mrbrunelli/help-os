@@ -26,12 +26,22 @@
     
     #div-center {
         width: 400px;
-        height: 400px;
+        height: 500px;
         left: 20%;
         margin: -130px 0 0 -210px;
         padding: 10px;
         position: absolute;
         top: 40%;
+    }
+    
+    #background-login {
+        background-image: url(../img/backlogin.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .font-weight-lighter {
+        font-weight: lighter;
     }
     /* ------------------------------------------------ CONTEUDO DA PAGINA */
     
