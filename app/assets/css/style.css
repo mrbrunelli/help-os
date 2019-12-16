@@ -33,10 +33,17 @@
     }
     
     #background-login {
+        background-color: rgb(240, 240, 240);
         background-image: url(../img/backlogin.png);
         background-size: cover;
         background-repeat: no-repeat;
         overflow: hidden;
+    }
+    
+    @media (max-width: 1200px) {
+        #background-login {
+            background-image: url(../img/backloginrotate.png);
+        }
     }
     
     .font-weight-lighter {
@@ -50,7 +57,7 @@
     }
     
     .sombra {
-        box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.50);
+        box-shadow: 2px 6px 10px 0px rgba(0, 0, 0, 0.50);
     }
     
     .row {
@@ -85,7 +92,7 @@
     
     .btn-add:hover {
         transform: scale(1.2);
-        box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.50);
+        box-shadow: 2px 6px 10px 0px rgba(0, 0, 0, 0.50);
     }
     
     .alta {
