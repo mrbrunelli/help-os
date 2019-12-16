@@ -2,12 +2,7 @@
     .position {
         position: inherit;
     }
-    /* ------------------------------------------------ CONTEUDO DA PAGINA */
-    
-    body {
-        margin: 0;
-        /* font-family: 'Open Sans', 'Montserrat', Arial; */
-    }
+    /* ----------------------------------------------------NAVBAR */
     
     .topnav a {
         float: left;
@@ -26,6 +21,23 @@
     
     .topnav a.ativo {
         border-bottom: 3px solid #007bff;
+    }
+    /* ----------------------------------------------------TELA DE LOGIN */
+    
+    #div-center {
+        width: 400px;
+        height: 300px;
+        left: 20%;
+        margin: -130px 0 0 -210px;
+        padding: 10px;
+        position: absolute;
+        top: 50%;
+    }
+    /* ------------------------------------------------ CONTEUDO DA PAGINA */
+    
+    body {
+        margin: 0;
+        /* font-family: 'Open Sans', 'Montserrat', Arial; */
     }
     
     .sombra {
