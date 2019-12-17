@@ -123,7 +123,7 @@
                 <div class="modal-body">
 
                     <!-- CADASTRO DE USUARIOS  -->
-                    <form id="formusuarios">
+                    <form name="cadastro" id="cadastro">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="tipo-usuario">Tipo do usuário</label>
@@ -172,8 +172,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="far fa-times-circle"></i> Cancelar</button>
-                    <button type="button" class="btn btn-success"><i class="far fa-check-circle"></i> Salvar</button>
+                    <button type="reset" class="btn btn-danger" data-dismiss="modal"><i class="far fa-times-circle"></i> Cancelar</button>
+                    <button type="submit" class="btn btn-success"><i class="far fa-check-circle"></i> Salvar</button>
                 </div>
             </div>
         </div>
@@ -394,26 +394,14 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <script>
+        // PARAMETRO PARA INICIAR O JQUERY 
         $(document).ready(function() {
             $('#telefone').mask('(00) 0 0000-0000')
-
-            $('#formusuarios').validate({
-                rules: {
-                    senha: {
-                        required: true,
-                        minlenght: 6
-                    },
-                    confirmasenha: {
-                        equalTo: 'senha'
-                    }
-                }
-            })
         })
 
         const validasenha = (senha) => {
