@@ -24,9 +24,8 @@
         <nav class="navbar-nav navbar-dark bg-primary shadow position">
             <ul class="navbar nav justify-content-between py-4">
                 <li class="nav-item">
-                    <!-- <a href="" class="nav-link text-light ml-5"><i class="fas fa-search "></i></a> -->
 
-                    <!-- SEARCH BONITÃO  -->
+                    <!-- BARRA DE SEARCH DO NAV  -->
                     <div class="searching">
                         <center>
                             <a href="javascript:void(0)" class="search-open">
@@ -75,7 +74,7 @@
                         </a>
 
                         <!-- OPÇÕES DO DROPDOWN  -->
-                        <div class="dropdown-menu sombra dropdown-menu-right position-absolute mr-4 text-center" aria-labelledby="dropdownMenu">
+                        <div class="dropdown-menu shadow dropdown-menu-right position-absolute mr-4 text-center" aria-labelledby="dropdownMenu">
                             <h6 class="dropdown-header bg-light"><img src="../assets/img/user.png" width="30px" height="30px"> - Matheus Brunelli</h6>
                             <a href="" class="dropdown-item"><i class="fas fa-cog"></i> Configurações</a>
                             <div class="dropdown-divider"></div>
@@ -88,23 +87,88 @@
 
         <!-- SEGUNDO NAV -->
         <nav class="navbar-nav navbar-light bg-light shadow">
-            <ul class="navbar nav justify-content-around py-3 container topnav">
+            <ul class="navbar nav justify-content-around py-3 container">
                 <li class="nav-item">
-                    <a href="" class="ativo">Home</a>
+                    <a href="" class="nav-link ativo">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="">Tickets</a>
+                    <a href="" class="nav-link">Tickets</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="">Relatório</a>
+                    <a href="" class="nav-link">Relatório</a>
                 </li>
-                <li class="nav-item">
-                    <a href="" class="">Gerencial</a>
-                </li>
+                <!-- MENU DROPDOWN GERENCIAL  -->
+                <div class="dropdown">
+                    <li class="nav-item">
+                        <a href="" class="nav-link dropdown-toggle" id="dropdown-gerencial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gerencial</a>
+                        <div class="dropdown-menu shadow position-absolute" aria-labelledby="dropdown-gerencial">
+                            <!-- LINK QUE ATIVA O MODAL PARA CADASTRAR USUARIOS  -->
+                            <a href="" class="dropdown-item" data-toggle="modal" data-target="#add-usuario"><i class="fas fa-plus-circle"></i> Cadastrar usuários</a>
+                        </div>
+                    </li>
+                </div>
             </ul>
         </nav>
     </header>
 
+    <!-- MODAL DO CADASTRO DE USUARIOS -->
+    <div class="modal fade" id="add-usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="">
+                    <div class="bg-primary text-light col-12 text-center">
+                        <h1 class="font-weight-light py-3">Cadastro de usuários</h1>
+                    </div>
+                </div>
+                <div class="modal-body">
+
+                    <!-- CADASTRO DE USUARIOS  -->
+                    <form>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="tipo-usuario">Tipo do usuário</label>
+                                <select class="form-control" name="tipo-usuario" id="tipo-usuario">
+                                    <option selected>Básico</option>
+                                    <option>Atendente</option>
+                                    <option>Gerência</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="entidade">Entidade</label>
+                                <select name="entidade" id="entidade" class="form-control">
+                                    <option selected>Gazin</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" id="nome">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" class="form-control" id="telefone">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="senha">Senha</label>
+                                <input type="password" class="form-control" id="senha">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="far fa-times-circle"></i> Cancelar</button>
+                    <button type="button" class="btn btn-success"><i class="far fa-check-circle"></i> Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BREADCRUMB  -->
     <div class="py-3 container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-white" style="padding: 0.75rem 0rem !important;">
@@ -115,7 +179,7 @@
         </nav>
     </div>
 
-    <!-- CONTEUDO DAS ORDENS DE SERVIÇO  -->
+    <!-- CONTEUDO DAS ORDENS DE SERVIÇO / TABELA  -->
     <div class="container conteudo shadow borda" style="padding-left:0 !important; padding-right:0 !important">
         <div class="table-responsive">
             <table class="table table-hover" style="margin-bottom: 0 !important;">
@@ -129,7 +193,7 @@
                         </div>
                     </div>
                     <div class="pt-5">
-                        <!-- DIV PARA SEPARAR O BOTAO DA DIV DE BAIXO -->
+                        <!-- DIV PARA SEPARAR O BOTAO ADD DA DIV DE BAIXO -->
                     </div>
                 </thead>
                 <thead>
@@ -161,7 +225,7 @@
                                 <div class="progress-bar alta" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </td>
-                        <td class="alta">Alta</td>
+                        <td class="alta text-center">Alta</td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
@@ -177,7 +241,7 @@
                                 <div class="progress-bar baixa" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </td>
-                        <td class="baixa">Baixa</td>
+                        <td class="baixa text-center">Baixa</td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
@@ -193,30 +257,30 @@
                                 <div class="progress-bar media" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </td>
-                        <td class="media">Média</td>
+                        <td class="media text-center">Média</td>
                     </tr>
-
                 </tbody>
             </table>
         </div>
     </div>
 
+    <!-- MODAL DO BOTAO ADD DA TABELA DE TICKETS  -->
     <div class="modal fade" id="adicionar" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="TituloModalCentralizado">Novo Ticket</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                <div class="">
+                    <div class="bg-primary text-light col-12 text-center">
+                        <h1 class="font-weight-light py-3">Cadastro de tickets</h1>
+                    </div>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <div class="container-fluid">
+
+                    <div class="container">
                         <!-- FORMULARIO DE TICKETS -->
                         <form action="" method="post">
-
-                            <div class="row">
-                                <div class="col-md-4 col-sm-12">
+                            <div class="form-row">
+                                <div class="col-md-3 col-sm-12">
                                     <div class="form-group">
                                         <label for="">Tipo: </label>
                                         <select name="" id="" class="form-control">
@@ -227,7 +291,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-4 col-sm-12">
+                                <div class="col-md-3 col-sm-12">
                                     <div class="form-group">
                                         <label for="">Categoria: </label>
                                         <select name="" id="" class="form-control">
@@ -238,7 +302,7 @@
                                     </select>
                                     </div>
                                 </div>
-                                <div class="col-md-4 col-sm-12">
+                                <div class="col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label for="">Título: </label>
                                         <input type="text" class="form-control">
@@ -264,8 +328,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-success">Salvar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="far fa-times-circle"></i> Fechar</button>
+                    <button type="button" class="btn btn-success"><i class="far fa-check-circle"></i> Salvar</button>
                 </div>
             </div>
         </div>
@@ -300,13 +364,9 @@
                             <p><i class="fab fa-github"></i><a href="https://github.com/armandobretas" target="_blank"> github.com/armandobretas</a></p>
                         </li>
                     </ul>
-
                 </div>
             </div>
-            <!-- FIM DA DIV ROW  -->
-
         </div>
-        <!-- FIM DO CONTAINER  -->
 
         <!-- SEGUNDO FOOTER  -->
         <div class="py-5 bg-dark text-light text-center">
@@ -324,7 +384,14 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#telefone').mask('(00)00000-0000')
+        })
+    </script>
 
 </body>
 
