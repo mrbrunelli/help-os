@@ -36,7 +36,7 @@
     
     #background-login {
         background-color: rgb(240, 240, 240);
-        background-image: url(../img/backlogin.svg);
+        background-image: url(../img/backlogin.png);
         background-size: cover;
         background-repeat: no-repeat;
         overflow: hidden;
@@ -64,7 +64,6 @@
     
     .row {
         margin: 0;
-        overflow-x: hidden;
     }
     
     .conteudo {
@@ -72,7 +71,7 @@
     }
     
     .borda {
-        border-radius: 15px 15px 0px 0px;
+        border-radius: 20px 20px 0px 0px;
     }
     
     .btn-add {
