@@ -8,8 +8,8 @@
                     </div>
                     <div style="padding: 1.5%; position: absolute; width: 100%;">
                         <button type="button" class="btn-add" style="float: right;" title="Abrir ticket" data-toggle="modal" data-target="#adicionar">
-                        <i class="fas fa-plus text-dark"></i>
-                    </button>
+                            <i class="fas fa-plus text-dark"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="pt-5">

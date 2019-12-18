@@ -15,8 +15,8 @@
     font-weight: bold
   }
 
-  .titulo { 
-    font-weight: normal
+  .titulo {
+    font-weight: lighter;
   }
 </style>
 
@@ -25,23 +25,23 @@
   <div class="row">
 
     <div class="col-sm-4 ">
-      <h2 class="text-center titulo"> PENDENTE </h2>
+      <h2 class="text-center titulo"> Pendente </h2>
       <div class="box">
         <div class="table-responsive">
           <table class="table table-hover table-striped">
             <thead class="dark">
               <tr>
-                <td>INCLUSÃO</td>
-                <td>TITULO</td>
-                <td>SOLICITANTE</td>
-                <td>OPÇÕES</td>
+                <td>Inclusão</td>
+                <td>Título</td>
+                <td>Solicitante</td>
+                <td>Opções</td>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td> <?= date('d/m/y H:i') ?> </td>
-                <td> NOVO RELATÓRIO </td>
-                <td> Luana Isabela</td>
+                <td>Novo relatório</td>
+                <td>Luana Isabela</td>
                 <td>
                   <button class="btn btn-primary" type="button">
                     <i class="fa fa-search"></i>
@@ -56,8 +56,8 @@
               </tr>
               <tr>
                 <td> <?= date('d/m/y H:i') ?> </td>
-                <td> MANUTENÇÃO PORTAL FATURAS </td>
-                <td> FRANCIELE </td>
+                <td>Manutenção portal faturas</td>
+                <td>Franciele</td>
                 <td>
                   <button class="btn btn-primary" type="button">
                     <i class="fa fa-search"></i>
@@ -72,8 +72,8 @@
               </tr>
               <tr>
                 <td> <?= date('d/m/y H:i') ?> </td>
-                <td> SQL RELATÓRIO SABIUM </td>
-                <td> Marcos Utsunomiya </td>
+                <td>SQL relatório Sabium</td>
+                <td>Marcos Utsunomiya</td>
                 <td>
                   <button class="btn btn-primary" type="button">
                     <i class="fa fa-search"></i>
@@ -92,7 +92,7 @@
       </div>
     </div>
     <div class="col-sm-4">
-      <h2 class="text-center titulo"> EM DESENVOLVIMENTO </h2>
+      <h2 class="text-center titulo">Em desenvolvimento</h2>
       <div class="box">
 
 
@@ -100,17 +100,17 @@
           <table class="table table-hover table-striped">
             <thead class="dark">
               <tr>
-                <td>PRIORIDADE</td>
-                <td>TITULO</td>
-                <td>CATEGORIA</td>
-                <td>OPÇÕES</td>
+                <td>Prioridade</td>
+                <td>Título</td>
+                <td>Categoria</td>
+                <td>Opções</td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td> ALTA </td>
-                <td> APLICATIVO JORNADA </td>
-                <td> Novo desenvolvimento </td>
+                <td>Alta</td>
+                <td>Aplicativo Jornada</td>
+                <td>Novo desenvolvimento</td>
                 <td>
                   <button class="btn btn-primary" type="button">
                     <i class="fa fa-search"></i>
@@ -133,7 +133,7 @@
       </div>
     </div>
     <div class="col-sm-4">
-      <h2 class="text-center titulo"> FINALIZADO </h2>
+      <h2 class="text-center titulo">Finalizado</h2>
       <div class="box">
 
 
@@ -142,10 +142,10 @@
           <table class="table table-hover table-striped">
             <thead class="dark">
               <tr>
-                <td>SOLICITANTE</td>
-                <td>TITULO</td>
-                <td>LEAD-TIME</td>
-                <td>CUSTO TOTAL</td>
+                <td>Solicitante</td>
+                <td>Título</td>
+                <td>Lead-Time</td>
+                <td>Custo total</td>
               </tr>
             </thead>
             <tbody>
