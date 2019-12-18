@@ -25,10 +25,10 @@
     /* ----------------------------------------------------TELA DE LOGIN */
     
     #div-center {
-        width: 400px;
-        height: 500px;
-        left: 15%;
+        /* width: 400px;
+        height: 500px; */
         position: absolute;
+        left: 15%;
         top: 22%;
         border-radius: 20px;
         padding: 20px;
@@ -41,10 +41,12 @@
         background-size: cover;
         background-repeat: no-repeat;
         overflow: hidden;
+        width: 1920px;
+        height: 1080px;
     }
     /* @media (max-width: 1200px) {
         #background-login {
-            background-image: url(../img/backloginrotate.png);
+            background-size: auto;
         }
     } */
     
