@@ -30,24 +30,23 @@
         left: 15%;
         position: absolute;
         top: 22%;
-        border-radius: 30px;
+        border-radius: 20px;
         padding: 20px;
-        background-color: rgba(255, 255, 255, 0.0);
+        background-color: rgba(0, 0, 0, 0.5);
     }
     
     #background-login {
         background-color: rgb(240, 240, 240);
-        background-image: url(../img/night.jpg);
+        background-image: url(../img/montain.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         overflow: hidden;
     }
-    
-    @media (max-width: 1200px) {
+    /* @media (max-width: 1200px) {
         #background-login {
             background-image: url(../img/backloginrotate.png);
         }
-    }
+    } */
     
     .font-weight-lighter {
         font-weight: lighter;
