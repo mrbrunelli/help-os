@@ -32,12 +32,3 @@ const editar = (idusuario, nome, email, telefone, idtipousuario, identidade) => 
     $('#add-usuario').modal('show');
     $('#modalUsuarios').modal('hide');
 }
-
-
-const tipoUsuario = (tipo) => {
-
-    tipo == 2 ? $('#div-foto').css('display', 'block') : $('#div-foto').css('display', 'none')
-    tipo == 2 ? $('#div-custohora').css('display', 'block') : $('#div-custohora').css('display', 'none')
-    tipo == 2 ? $('#div-telefone').css('display', 'none') : $('#div-telefone').css('display', 'block')
-
-}

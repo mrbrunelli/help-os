@@ -31,7 +31,7 @@ if ( isset ( $_GET['element'] ) && $_GET['element'] == 'tabela_usuarios' ) {
             <td>'.$d['telefone'].'</td>
             <td>'.$d['status'].'</td>
             <td>
-                <button class="btn btn-primary" type="button" onclick="editar('.$d['idusuario'].',`'.$d['nome'].'`,`'.$d['email'].'`,`'.$d['telefone'].'`,'.$d['idtipousuario'].','.$d['identidade'].')">
+                <button class="btn btn-dark" type="button" onclick="editar('.$d['idusuario'].',`'.$d['nome'].'`,`'.$d['email'].'`,`'.$d['telefone'].'`,'.$d['idtipousuario'].','.$d['identidade'].')">
                     <i class="fa fa-edit"></i>
                 </button>
             </td>

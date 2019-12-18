@@ -1,4 +1,4 @@
-  <!-- MODAL DO CADASTRO DE USUARIOS -->
+''  <!-- MODAL DO CADASTRO DE USUARIOS -->
   <div class="modal fade" id="add-usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
@@ -15,7 +15,7 @@
                       <div class="form-row">
                           <div class="form-group col-md-6">
                               <label for="tipo-usuario">Tipo do usuário</label>
-                              <select class="form-control" name="tipo-usuario" id="tipo-usuario" onchange="tipoUsuario(this.value)">
+                              <select class="form-control" name="tipo-usuario" id="tipo-usuario" >
                                   <?php
                                     foreach (DBRead('tipousuario') as $t) {
                                         echo '<option value="' . $t['idtipousuario'] . '"> ' . $t['nome'] . ' </option>';
@@ -134,7 +134,7 @@
                               </div>
                               <div class="col-md-12 col-sm-12">
                                   <div class="form-group">
-                                      <label for="">Anexos: </label>
+                                      <label for="anexo">Anexos: </label>
                                       <input type="file" name="anexo[]" multiple="multiple" id="anexo" class="form-control">
                                   </div>
                               </div>
@@ -176,6 +176,7 @@
                   <div class="row">
                       <div class="col-sm-12">
                           <div class="table-responsive" id="conteudoUsuarios">
+                              <!-- AQUI DENTRO CARREGA O SELECT DO BANCO E TRAS OS USUARIOS  -->
                           </div>
                       </div>
                   </div>

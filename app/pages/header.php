@@ -2,7 +2,7 @@
 
 require_once '../../backend/conexao.php';
 require_once '../../backend/funcoes.php';
- 
+
 $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
 
 ?>
@@ -77,7 +77,9 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
 
                 </li>
                 <li class="nav-item">
-                    <a href="" class="navbar-brand">HelpOS</a>
+                    <a href="" class="navbar-brand">
+                        <img src="../assets/img/logo.png" width="150" style="transform: scale(1.5)">
+                    </a>
                 </li>
                 <li class="nav-item">
                     <!-- MENU DO USUARIO -->
@@ -104,14 +106,14 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
                 <li class="nav-item">
                     <a href="index.php?pg=home" class="nav-link ativo">Home</a>
                 </li>
-                <li class="nav-item" <?php echo $menu; ?> >
+                <li class="nav-item" <?php echo $menu; ?>>
                     <a href="index.php?pg=tickets" class="nav-link">Tickets</a>
                 </li>
-                <li class="nav-item" <?php echo $menu; ?> >
+                <li class="nav-item" <?php echo $menu; ?>>
                     <a href="index.php?pg=relatorio" class="nav-link">Relatório</a>
                 </li>
                 <!-- MENU DROPDOWN GERENCIAL  -->
-                <div class="dropdown" <?php echo $menu; ?> >
+                <div class="dropdown" <?php echo $menu; ?>>
                     <li class="nav-item">
                         <a href="" class="nav-link dropdown-toggle" id="dropdown-gerencial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gerencial</a>
                         <div class="dropdown-menu shadow position-absolute" aria-labelledby="dropdown-gerencial">
@@ -148,7 +150,7 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
     echo '
         <div class="py-3 container">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb bg-white" style="padding: 0.75rem 0rem !important;">
+                <ol class="breadcrumb bg-transparent" style="padding: 0.75rem 0rem !important;">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">' . $breadcrumb . '</li>
                 </ol>
