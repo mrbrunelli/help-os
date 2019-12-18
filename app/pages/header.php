@@ -2,6 +2,8 @@
 
 require_once '../../backend/conexao.php';
 require_once '../../backend/funcoes.php';
+ 
+$_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
 
 ?>
 <!doctype html>
@@ -102,14 +104,14 @@ require_once '../../backend/funcoes.php';
                 <li class="nav-item">
                     <a href="index.php?pg=home" class="nav-link ativo">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" <?php echo $menu; ?> >
                     <a href="index.php?pg=tickets" class="nav-link">Tickets</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" <?php echo $menu; ?> >
                     <a href="index.php?pg=relatorio" class="nav-link">Relatório</a>
                 </li>
                 <!-- MENU DROPDOWN GERENCIAL  -->
-                <div class="dropdown">
+                <div class="dropdown" <?php echo $menu; ?> >
                     <li class="nav-item">
                         <a href="" class="nav-link dropdown-toggle" id="dropdown-gerencial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gerencial</a>
                         <div class="dropdown-menu shadow position-absolute" aria-labelledby="dropdown-gerencial">

@@ -14,49 +14,45 @@
 
 <body id="background-login">
 
+
+    <!-- FORMULARIO -->
     <div class="row z-depth-1" id="div-center">
-        <div class="col s6">
+        <div class="col s12">
             <div class="row">
-                <div class="col s12">
-                    <h1 class="center font-weight-lighter grey-text text-lighten-2">HelpOS</h1>
-                    <!-- FORMULARIO -->
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">lock</i>
-                            <input id="senha" type="password" class="validate">
-                            <label for="senha">Senha</label>
-                        </div>
-                        <div class="col s12 center">
-                            <button class="btn waves-effect blue lighten-1 waves-light col s12" onclick="login()">
-                                Entrar
-                            </button>
-                        </div>
-                        <div class="col s12 center" style="margin-top: 20px;">
-                            <label>
-                                <input type="checkbox">
-                                <span>Lembrar minha senha</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col s12 center" id="loading" style="display:none">
-                        <div class="preloader-wrapper small  active">
-                            <div class="spinner-layer spinner-blue">
-                                <div class="circle-clipper left">
-                                    <div class="circle"></div>
-                                </div>
-                            </div>
+                <h1 class="center font-weight-lighter grey-text text-lighten-2">HelpOS</h1>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="email" type="email" class="validate input-login">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">lock</i>
+                    <input id="senha" type="password" class="validate input-login">
+                    <label for="senha">Senha</label>
+                </div>
+                <div class="col s12 center">
+                    <button class="btn waves-effect btn-login waves-light col s12" onclick="login()">
+                        Entrar
+                    </button>
+                </div>
+                <div class="col s12 center" style="margin-top: 20px;">
+                    <label>
+                        <input type="checkbox">
+                        <span>Lembrar minha senha</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col s12 center" id="loading" style="display:none">
+                <div class="preloader-wrapper small  active">
+                    <div class="spinner-layer spinner-blue">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./app/assets/js/sweetalert2.js"></script>

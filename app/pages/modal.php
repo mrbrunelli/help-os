@@ -1,6 +1,6 @@
   <!-- MODAL DO CADASTRO DE USUARIOS -->
   <div class="modal fade" id="add-usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
               <div class="">
                   <div class="bg-primary text-light col-12 text-center">
@@ -162,9 +162,9 @@
 
 
 
-  <!-- MODAL DO BOTAO ADD DA TABELA DE TICKETS  -->
+  <!-- MODAL QUE EXIBE O SELECT DOS USUARIOS CADASTRADOS  -->
   <div class="modal fade" id="modalUsuarios" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
               <div class="">
                   <div class="bg-primary text-light col-12 text-center">

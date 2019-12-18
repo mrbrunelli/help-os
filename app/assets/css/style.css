@@ -24,15 +24,26 @@
     }
     /* ----------------------------------------------------TELA DE LOGIN */
     
+    .btn-login {
+        background-color: #79838a !important
+    }
+    
+    .input-login {
+        /* color: #4CAF50; */
+        color: lightgray;
+        font-weight: lighter;
+        font-size: 20px !important;
+    }
+    
     #div-center {
-        /* width: 400px;
-        height: 500px; */
+        width: 400px;
+        height: 500px;
         position: absolute;
         left: 15%;
-        top: 22%;
-        border-radius: 20px;
+        top: 10%;
+        /* border-radius: 20px; */
         padding: 20px;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.6);
     }
     
     #background-login {
