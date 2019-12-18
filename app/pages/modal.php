@@ -42,8 +42,16 @@
                               <input type="file" class="form-control" name="foto[]" id="foto">
                               <small>Tamanho máximo: 500kb</small>
                           </div>
-                          <div class="form-group" id="div-custohora">
+                          <div class="form-group col-md-4" id="div-custohora" style="display: none">
                               <label for="custohora">Custo/Hora</label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <div class="input-group-text">
+                                          <i class="fas fa-dollar-sign text-success"></i>
+                                      </div>
+                                  </div>
+                                  <input type="text" class="form-control" id="custohora">
+                              </div>
                           </div>
                           <div class="form-group col-md-12">
                               <label for="email">Email</label>

@@ -1,3 +1,9 @@
+// PARAMETRO PARA INICIAR O JQUERY 
+$(document).ready(function() {
+    $('#telefone').mask('(00) 0 0000-0000')
+    $('#custohora').mask("#.##0,00", { reverse: true })
+})
+
 const validasenha = (senha) => {
     let senha1 = $('#senha').val()
     if (senha == senha1) {
@@ -31,6 +37,7 @@ const editar = (idusuario, nome, email, telefone, idtipousuario, identidade) => 
 const tipoUsuario = (tipo) => {
 
     tipo == 2 ? $('#div-foto').css('display', 'block') : $('#div-foto').css('display', 'none')
+    tipo == 2 ? $('#div-custohora').css('display', 'block') : $('#div-custohora').css('display', 'none')
     tipo == 2 ? $('#div-telefone').css('display', 'none') : $('#div-telefone').css('display', 'block')
 
 }

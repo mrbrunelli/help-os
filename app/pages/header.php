@@ -1,7 +1,7 @@
 <?php
 
-    require_once '../../backend/conexao.php';
-    require_once '../../backend/funcoes.php';
+require_once '../../backend/conexao.php';
+require_once '../../backend/funcoes.php';
 
 ?>
 <!doctype html>
@@ -26,12 +26,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <script>
-        // PARAMETRO PARA INICIAR O JQUERY 
-        $(document).ready(function() {
-            $('#telefone').mask('(00) 0 0000-0000')
-        })
-    </script>
 </head>
 
 <body>
@@ -54,8 +48,8 @@
                             <form>
                                 <input type="text" class="form-control" placeholder="Digite o número do Ticket...">
                                 <button type="submit">
-                                     <i class="fa fa-search"></i>
-                                 </button>
+                                    <i class="fa fa-search"></i>
+                                </button>
                                 <a href="javascript:void(0)" class="search-close">
                                     <i class="fa fa-times"></i>
                                 </a>
@@ -92,7 +86,7 @@
 
                         <!-- OPÇÕES DO DROPDOWN  -->
                         <div class="dropdown-menu shadow dropdown-menu-right position-absolute mr-4 text-center" aria-labelledby="dropdownMenu">
-                            <h6 class="dropdown-header bg-light"><img src="../assets/img/user.png" width="30px" height="30px"> - <?=$_SESSION['UsuarioNome']?> </h6>
+                            <h6 class="dropdown-header bg-light"><img src="../assets/img/user.png" width="30px" height="30px"> - <?= $_SESSION['UsuarioNome'] ?> </h6>
                             <a href="" class="dropdown-item"><i class="fas fa-cog"></i> Configurações</a>
                             <div class="dropdown-divider"></div>
                             <a href="logout.php" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Sair</a>
@@ -129,33 +123,34 @@
     </header>
 
 
-      
-  
+
+
 
     <?php
 
-        if (isset($_GET['pg'])) {
-            if ( $_GET['pg'] == 'home') {
-                $breadcrumb = "";
-            } 
-            if ( $_GET['pg'] == 'relatorio') {
-                $breadcrumb = "Relatório";
-            } 
-            if ( $_GET['pg'] == 'tickets') {
-                $breadcrumb = "Tickets";
-            } 
-        } 
+    $breadcrumb = '';
+
+    if (isset($_GET['pg'])) {
+        if ($_GET['pg'] == 'home') {
+            $breadcrumb = "";
+        }
+        if ($_GET['pg'] == 'relatorio') {
+            $breadcrumb = "Relatório";
+        }
+        if ($_GET['pg'] == 'tickets') {
+            $breadcrumb = "Tickets";
+        }
+    }
 
 
-        echo '
+    echo '
         <div class="py-3 container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-white" style="padding: 0.75rem 0rem !important;">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">'.$breadcrumb.'</li>
+                    <li class="breadcrumb-item active" aria-current="page">' . $breadcrumb . '</li>
                 </ol>
             </nav>
         </div>';
 
     ?>
- 
