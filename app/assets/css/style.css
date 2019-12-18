@@ -93,7 +93,7 @@
     }
     
     .btn-add {
-        background-color: #007bff;
+        /* background-color: #007bff; */
         color: white;
         display: block;
         height: 3em;
@@ -176,7 +176,8 @@
         cursor: pointer;
         width: 80px;
         height: 99%;
-        background: #007bff;
+        background: #343a40;
+        ;
         color: #fff;
     }
     

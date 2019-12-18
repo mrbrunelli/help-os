@@ -3,7 +3,7 @@
       <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
               <div class="">
-                  <div class="bg-primary text-light col-12 text-center">
+                  <div class="bg-dark text-light col-12 text-center">
                       <h1 class="font-weight-light py-3">Cadastro de usuários <button type="button" class="btn float-right" onclick="editaUsuario()"><i class="fa fa-edit text-light fa-2x"></i></button></h1>
                   </div>
               </div>
@@ -78,8 +78,8 @@
 
               </div>
               <div class="modal-footer">
-                  <button type="reset" class="btn btn-danger" data-dismiss="modal"><i class="far fa-times-circle"></i> Cancelar</button>
-                  <button type="submit" class="btn btn-success"><i class="far fa-check-circle"></i> Salvar</button>
+                  <button type="reset" class="btn btn-light" data-dismiss="modal"><i class="far fa-times-circle"></i> Cancelar</button>
+                  <button type="submit" class="btn btn-dark"><i class="far fa-check-circle"></i> Salvar</button>
               </div>
           </div>
       </div>
@@ -93,7 +93,7 @@
       <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
               <div class="">
-                  <div class="bg-primary text-light col-12 text-center">
+                  <div class="bg-dark text-light col-12 text-center">
                       <h1 class="font-weight-light py-3">Cadastro de tickets</h1>
                   </div>
                   </button>
@@ -149,8 +149,8 @@
                   </div>
               </div>
               <div class="modal-footer">
-                  <button type="reset" class="btn btn-danger" data-dismiss="modal"><i class="far fa-times-circle"></i> Fechar</button>
-                  <button type="submit" class="btn btn-success"><i class="far fa-check-circle"></i> Salvar</button>
+                  <button type="reset" class="btn btn-light" data-dismiss="modal"><i class="far fa-times-circle"></i> Fechar</button>
+                  <button type="submit" class="btn btn-dark"><i class="far fa-check-circle"></i> Salvar</button>
               </div>
           </div>
       </div>
@@ -167,7 +167,7 @@
       <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
               <div class="">
-                  <div class="bg-primary text-light col-12 text-center">
+                  <div class="bg-dark text-light col-12 text-center">
                       <h1 class="font-weight-light py-3">Lista de Usuários</h1>
                   </div>
                   </button>
@@ -181,7 +181,7 @@
                   </div>
               </div>
               <div class="modal-footer">
-                  <button type="reset" class="btn btn-danger" data-dismiss="modal"><i class="far fa-times-circle"></i> Fechar</button>
+                  <button type="reset" class="btn btn-light" data-dismiss="modal"><i class="far fa-times-circle"></i> Fechar</button>
               </div>
           </div>
       </div>

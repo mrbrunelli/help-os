@@ -34,7 +34,7 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
 
     <header class="sticky-top">
         <!-- PRIMEIRO NAV  -->
-        <nav class="navbar-nav navbar-dark bg-primary shadow position">
+        <nav class="navbar-nav navbar-dark bg-dark shadow position">
             <ul class="navbar nav justify-content-between py-4">
                 <li class="nav-item">
 

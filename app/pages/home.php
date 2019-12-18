@@ -3,11 +3,11 @@
             <table class="table table-hover" style="margin-bottom: 0 !important;">
                 <thead>
                     <div style="position: relative;">
-                        <div class="pt-1 borda" style="position: absolute; width: 100%; background-color: rgb(239, 239, 239);">
-                            <p class="font-weight-bold text-dark lead ml-3">Meus tickets</p>
+                        <div class="pt-1 bg-dark" style="position: absolute; width: 100%;">
+                            <p class="font-weight-bolder text-light lead ml-3">Meus tickets</p>
                         </div>
                         <div style="padding: 1.5%; position: absolute; width: 100%;">
-                            <button type="button" class="btn-add" style="float: right;" data-toggle="modal" data-target="#adicionar"><i class="fas fa-plus"></i></button>
+                            <button type="button" class="btn-add" style="float: right;" data-toggle="modal" data-target="#adicionar"><i class="fas fa-plus text-dark"></i></button>
                         </div>
                     </div>
                     <div class="pt-5">
