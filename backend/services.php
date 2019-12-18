@@ -18,6 +18,11 @@ if ( isset ( $_GET['service'] )  ) {
     $busca_usuario = DBRead($tabela,$filtros,$campos);
 
     if ($busca_usuario) {
+      session_start();
+
+      $_SESSION['UsuarioID']=$busca_usuario[0]['idusuario'];
+      $_SESSION['UsuarioNome']=$busca_usuario[0]['nome'];
+      $_SESSION['UsuarioTipo']=$busca_usuario[0]['idtipousuario'];
       echo 1;
       exit;
     } else {
