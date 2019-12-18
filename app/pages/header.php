@@ -107,7 +107,7 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
                     <a href="index.php?pg=home" class="nav-link ativo">Home</a>
                 </li>
                 <li class="nav-item" <?php echo $menu; ?>>
-                    <a href="index.php?pg=tickets" class="nav-link">Tickets</a>
+                    <a href="index.php?pg=gerencial" class="nav-link">Gerencial</a>
                 </li>
                 <li class="nav-item" <?php echo $menu; ?>>
                     <a href="index.php?pg=relatorio" class="nav-link">Relatório</a>
@@ -115,7 +115,7 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
                 <!-- MENU DROPDOWN GERENCIAL  -->
                 <div class="dropdown" <?php echo $menu; ?>>
                     <li class="nav-item">
-                        <a href="" class="nav-link dropdown-toggle" id="dropdown-gerencial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gerencial</a>
+                        <a href="" class="nav-link dropdown-toggle" id="dropdown-gerencial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
                         <div class="dropdown-menu shadow position-absolute" aria-labelledby="dropdown-gerencial">
                             <!-- LINK QUE ATIVA O MODAL PARA CADASTRAR USUARIOS  -->
                             <a href="" class="dropdown-item" data-toggle="modal" data-target="#add-usuario"><i class="fas fa-plus-circle"></i> Cadastrar usuários</a>
@@ -132,17 +132,14 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
 
     <?php
 
-    $breadcrumb = '';
+    $breadcrumb = 'Meus tickets';
 
     if (isset($_GET['pg'])) {
-        if ($_GET['pg'] == 'home') {
-            $breadcrumb = "";
-        }
         if ($_GET['pg'] == 'relatorio') {
             $breadcrumb = "Relatório";
         }
-        if ($_GET['pg'] == 'tickets') {
-            $breadcrumb = "Tickets";
+        if ($_GET['pg'] == 'gerencial') {
+            $breadcrumb = "Gerencial";
         }
     }
 

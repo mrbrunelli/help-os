@@ -2,6 +2,7 @@
 $(document).ready(function() {
     $('#telefone').mask('(00) 0 0000-0000')
     $('#custohora').mask("#.##0,00", { reverse: true })
+    $('[data-toggle="tooltip"]').tooltip()
 })
 
 const validasenha = (senha) => {

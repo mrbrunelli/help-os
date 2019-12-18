@@ -7,7 +7,9 @@
                         <p class="font-weight-bolder text-light lead ml-3">Meus tickets</p>
                     </div>
                     <div style="padding: 1.5%; position: absolute; width: 100%;">
-                        <button type="button" class="btn-add" style="float: right;" data-toggle="modal" data-target="#adicionar"><i class="fas fa-plus text-dark"></i></button>
+                        <button type="button" class="btn-add" style="float: right;" title="Abrir ticket" data-toggle="modal" data-target="#adicionar">
+                        <i class="fas fa-plus text-dark"></i>
+                    </button>
                     </div>
                 </div>
                 <div class="pt-5">
