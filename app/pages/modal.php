@@ -1,10 +1,10 @@
   <!-- MODAL DO CADASTRO DE USUARIOS -->
   <div class="modal fade" id="add-usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
               <div class="">
                   <div class="bg-primary text-light col-12 text-center">
-                      <h1 class="font-weight-light py-3">Cadastro de usuários <button type="button" class="btn btn-primary" onclick="editaUsuario()"><i class="fa fa-edit"></i></i></button> </h1>
+                      <h1 class="font-weight-light py-3">Cadastro de usuários <button type="button" class="btn float-right" onclick="editaUsuario()"><i class="fa fa-edit text-light fa-2x"></i></button></h1>
                   </div>
               </div>
               <div class="modal-body">
