@@ -1,4 +1,4 @@
-''  <!-- MODAL DO CADASTRO DE USUARIOS -->
+  <!-- MODAL DO CADASTRO DE USUARIOS -->
   <div class="modal fade" id="add-usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
@@ -15,7 +15,7 @@
                       <div class="form-row">
                           <div class="form-group col-md-6">
                               <label for="tipo-usuario">Tipo do usuário</label>
-                              <select class="form-control" name="tipo-usuario" id="tipo-usuario" >
+                              <select class="form-control" name="tipo-usuario" id="tipo-usuario">
                                   <?php
                                     foreach (DBRead('tipousuario') as $t) {
                                         echo '<option value="' . $t['idtipousuario'] . '"> ' . $t['nome'] . ' </option>';
@@ -94,7 +94,7 @@
           <div class="modal-content">
               <div class="">
                   <div class="bg-dark text-light col-12 text-center">
-                      <h1 class="font-weight-light py-3">Cadastro de tickets</h1>
+                      <h1 class="font-weight-light py-3">Novo ticket</h1>
                   </div>
                   </button>
               </div>
@@ -102,46 +102,50 @@
 
                   <div class="container">
                       <!-- FORMULARIO DE TICKETS -->
-                      <form action="" method="post">
+                      <form id="formTicket" action="index.php?pg=home" enctype="multipart/form-data" method="post">
                           <div class="form-row">
-                              <div class="col-md-3 col-sm-12">
+                              <div class="col-md-6 col-sm-12">
                                   <div class="form-group">
-                                      <label for="">Tipo: </label>
-                                      <select name="" id="" class="form-control">
-                                          <option value="">Tipo 1</option>
-                                          <option value="">Tipo 2</option>
-                                          <option value="">Tipo 3</option>
-                                          <option value="">Tipo 4</option>
-                                      </select>
-                                  </div>
-                              </div>
-                              <div class="col-md-3 col-sm-12">
-                                  <div class="form-group">
-                                      <label for="">Categoria: </label>
-                                      <select name="" id="" class="form-control">
-                                          <option value="">Categoria 1</option>
-                                          <option value="">Categoria 2</option>
-                                          <option value="">Categoria 3</option>
-                                          <option value="">Categoria 4</option>
+                                      <label for="idtipoticket">Selecione o tipo </label>
+                                      <select name="idtipoticket" id="idtipoticket" class="form-control" required>
+                                          <option value=""></option>
+                                          <?php
+                                            foreach (DBRead('tipo_ticket') as $tipoticket) {
+                                                echo '<option value="' . $tipoticket['idtipoticket'] . '">' . $tipoticket['nome'] . '</option>';
+                                            }
+                                            ?>
                                       </select>
                                   </div>
                               </div>
                               <div class="col-md-6 col-sm-12">
                                   <div class="form-group">
-                                      <label for="">Título: </label>
-                                      <input type="text" class="form-control">
+                                      <label for="idcategoriaticket">Categoria: </label>
+                                      <select name="idcategoriaticket" id="idcategoriaticket" class="form-control" required>
+                                          <option value=""></option>
+                                          <?php
+                                            foreach (DBRead('categoria_ticket') as $categoriaticket) {
+                                                echo '<option value="' . $categoriaticket['idcategoriaticket'] . '">' . $categoriaticket['nome'] . '</option>';
+                                            }
+                                            ?>
+                                      </select>
                                   </div>
                               </div>
                               <div class="col-md-12 col-sm-12">
                                   <div class="form-group">
-                                      <label for="anexo">Anexos: </label>
-                                      <input type="file" name="anexo[]" multiple="multiple" id="anexo" class="form-control">
+                                      <label for="tituloticket">Título: </label>
+                                      <input type="text" class="form-control" name="tituloticket" id="tituloticket" required>
                                   </div>
                               </div>
                               <div class="col-md-12 col-sm-12">
                                   <div class="form-group">
-                                      <label for="">Descrição: </label>
-                                      <textarea class="form-control" rows="4"></textarea>
+                                      <label for="anexoticket">Anexos: </label>
+                                      <input type="file" name="anexoticket[]" multiple="multiple" id="anexoticket" class="form-control">
+                                  </div>
+                              </div>
+                              <div class="col-md-12 col-sm-12">
+                                  <div class="form-group">
+                                      <label for="descricaoticket">Descrição: </label>
+                                      <textarea class="form-control" rows="4" name="descricaoticket" id="descricaoticket"></textarea>
                                   </div>
                               </div>
                           </div>

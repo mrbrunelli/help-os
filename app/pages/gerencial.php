@@ -20,7 +20,7 @@
             </div>
           </div>
         </div>
-        <table class="table table-hover bg-white shadow-sm">
+        <table class="table table-hover bg-white shadow">
           <thead class="dark">
             <tr>
               <td>Inclusão</td>
@@ -105,7 +105,7 @@
             </div>
           </div>
         </div>
-        <table class="table table-hover bg-white shadow-sm">
+        <table class="table table-hover bg-white shadow">
           <thead class="dark">
             <tr>
               <td>Prioridade</td>
@@ -160,7 +160,7 @@
             </div>
           </div>
         </div>
-        <table class="table table-hover bg-white shadow-sm">
+        <table class="table table-hover bg-white shadow">
           <thead class="dark">
             <tr>
               <td>Solicitante</td>

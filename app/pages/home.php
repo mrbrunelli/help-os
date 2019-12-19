@@ -1,6 +1,6 @@
 <div class="container conteudo shadow borda" style="padding-left:0 !important; padding-right:0 !important">
     <div class="table-responsive">
-        <table class="table table-hover" style="margin-bottom: 0 !important;">
+        <table class="table table-hover" id="table" style="margin-bottom: 0 !important;">
             <thead>
                 <div style="position: relative;">
                     <div class="pt-1 bg-dark" style="position: absolute; width: 100%;">

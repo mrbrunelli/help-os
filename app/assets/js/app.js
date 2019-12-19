@@ -2,6 +2,14 @@
 $(document).ready(function() {
     $('#telefone').mask('(00) 0 0000-0000')
     $('#custohora').mask("#.##0,00", { reverse: true })
+    $('#table').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    })
 })
 
 const validasenha = (senha) => {
@@ -32,3 +40,17 @@ const editar = (idusuario, nome, email, telefone, idtipousuario, identidade) => 
     $('#add-usuario').modal('show');
     $('#modalUsuarios').modal('hide');
 }
+
+
+
+$('#formTicket')
+    .submit(function(e) {
+        $.ajax({
+            url: 'FormSubmitUrl',
+            type: 'POST',
+            data: new FormData(this),
+            processData: false,
+            contentType: false
+        });
+        e.preventDefault();
+    });
