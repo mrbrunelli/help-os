@@ -32,9 +32,9 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
 
 <body>
 
-    <header class="sticky-top">
+    <header>
         <!-- PRIMEIRO NAV  -->
-        <nav class="navbar-nav navbar-dark bg-dark shadow position">
+        <nav class="navbar-nav navbar-dark bg-dark shadow">
             <ul class="navbar nav justify-content-between py-4">
                 <li class="nav-item">
 
@@ -77,19 +77,19 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
 
                 </li>
                 <li class="nav-item">
-                    <a href="" class="navbar-brand">
+                    <a href="index.php?pg=home" class="navbar-brand">
                         <img src="../assets/img/logo.png" width="150" style="transform: scale(1.5)">
                     </a>
                 </li>
                 <li class="nav-item">
                     <!-- MENU DO USUARIO -->
-                    <div class="dropdown">
+                    <div class="dropdown ">
                         <a href="" class="nav-link text-light mr-5" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user-circle fa-2x"></i>
                         </a>
 
                         <!-- OPÇÕES DO DROPDOWN  -->
-                        <div class="dropdown-menu shadow dropdown-menu-right position-absolute mr-4 text-center" aria-labelledby="dropdownMenu">
+                        <div class="dropdown-menu shadow dropdown-menu-right position-absolute mr-4 text-center z-index9999" aria-labelledby="dropdownMenu">
                             <h6 class="dropdown-header bg-light"><img src="../assets/img/user.png" width="30px" height="30px"> - <?= $_SESSION['UsuarioNome'] ?> </h6>
                             <a href="" class="dropdown-item"><i class="fas fa-cog"></i> Configurações</a>
                             <div class="dropdown-divider"></div>
@@ -100,31 +100,32 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
             </ul>
         </nav>
 
-        <!-- SEGUNDO NAV -->
-        <nav class="navbar-nav navbar-light bg-light shadow">
-            <ul class="navbar nav justify-content-around py-3 container">
-                <li class="nav-item">
-                    <a href="index.php?pg=home" class="nav-link ativo">Home</a>
-                </li>
-                <li class="nav-item" <?php echo $menu; ?>>
-                    <a href="index.php?pg=gerencial" class="nav-link">Gerencial</a>
-                </li>
-                <li class="nav-item" <?php echo $menu; ?>>
-                    <a href="index.php?pg=relatorio" class="nav-link">Relatório</a>
-                </li>
-                <!-- MENU DROPDOWN GERENCIAL  -->
-                <div class="dropdown" <?php echo $menu; ?>>
-                    <li class="nav-item">
-                        <a href="" class="nav-link dropdown-toggle" id="dropdown-gerencial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
-                        <div class="dropdown-menu shadow position-absolute" aria-labelledby="dropdown-gerencial">
-                            <!-- LINK QUE ATIVA O MODAL PARA CADASTRAR USUARIOS  -->
-                            <a href="" class="dropdown-item" data-toggle="modal" data-target="#add-usuario"><i class="fas fa-plus-circle"></i> Cadastrar usuários</a>
-                        </div>
-                    </li>
-                </div>
-            </ul>
-        </nav>
+
     </header>
+    <!-- SEGUNDO NAV -->
+    <nav class="navbar-nav navbar-light bg-light shadow sticky-top">
+        <ul class="navbar nav justify-content-around py-3 container">
+            <li class="nav-item">
+                <a href="index.php?pg=home" class="nav-link ativo">Home</a>
+            </li>
+            <li class="nav-item" <?php echo $menu; ?>>
+                <a href="index.php?pg=gerencial" class="nav-link">Gerencial</a>
+            </li>
+            <li class="nav-item" <?php echo $menu; ?>>
+                <a href="index.php?pg=relatorio" class="nav-link">Relatório</a>
+            </li>
+            <!-- MENU DROPDOWN GERENCIAL  -->
+            <div class="dropdown" <?php echo $menu; ?>>
+                <li class="nav-item">
+                    <a href="" class="nav-link dropdown-toggle" id="dropdown-gerencial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
+                    <div class="dropdown-menu shadow position-absolute" aria-labelledby="dropdown-gerencial">
+                        <!-- LINK QUE ATIVA O MODAL PARA CADASTRAR USUARIOS  -->
+                        <a href="" class="dropdown-item" data-toggle="modal" data-target="#add-usuario"><i class="fas fa-plus-circle"></i> Cadastrar usuários</a>
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </nav>
 
 
 

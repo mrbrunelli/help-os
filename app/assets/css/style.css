@@ -1,6 +1,6 @@
     @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-    .position {
-        position: inherit;
+    .z-index9999 {
+        z-index: 9999;
     }
     
     .form-control {
@@ -77,12 +77,12 @@
     .font-weight-lighter {
         font-weight: lighter;
     }
-    /* ----------------------------------------------------FORMULARIO DE CADASTRO */
+    /* ----------------------------------------------------FORMULARIO DE CADASTRO DO MODAL */
     
     #formulario-cadastro {
         width: 600px;
     }
-    /* --------------------------------------------------- CONTEUDO DA PAGINA */
+    /* --------------------------------------------------- CONTEUDO DA PAGINA HOME */
     
     body {
         margin: 0;
@@ -143,6 +143,43 @@
         color: rgb(52, 152, 219);
         display: table-cell;
         font-weight: bolder;
+    }
+    /* ------------------------------------------------------- CONTEUDO DA PAGINA GERENCIAL */
+    
+    .box {
+        border-radius: 2px;
+        min-height: 500px
+    }
+    
+    .container {
+        padding-bottom: 50px
+    }
+    
+    .dark {
+        background: #343a40;
+        color: #fff;
+        font-weight: bold
+    }
+    
+    .titulo {
+        margin-bottom: 0.5em;
+        font-weight: lighter;
+    }
+    
+    .bordinha {
+        border-radius: 15px;
+    }
+    
+    .table {
+        zoom: 90%;
+    }
+    
+    .fa-1em {
+        font-size: 1.5em !important;
+    }
+    
+    .dropdown-item {
+        cursor: pointer;
     }
     /* ---------------------------------------------------- FOOTER DA PAGINA */
     
