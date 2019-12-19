@@ -1,6 +1,5 @@
 <style>
   .box {
-    box-shadow: black 1px 1px 3px;
     border-radius: 2px;
     min-height: 400px
   }
@@ -26,7 +25,7 @@
 
     <div class="col-sm-4 ">
       <h2 class="text-center titulo"> Pendente </h2>
-      <div class="box">
+      <div class="shadow box">
         <div class="table-responsive">
           <table class="table table-hover table-striped">
             <thead class="dark">
@@ -93,7 +92,7 @@
     </div>
     <div class="col-sm-4">
       <h2 class="text-center titulo">Em desenvolvimento</h2>
-      <div class="box">
+      <div class="shadow box">
 
 
         <div class="table-responsive">
@@ -134,7 +133,7 @@
     </div>
     <div class="col-sm-4">
       <h2 class="text-center titulo">Finalizado</h2>
-      <div class="box">
+      <div class="shadow box">
 
 
 
@@ -150,10 +149,10 @@
             </thead>
             <tbody>
               <tr>
-                <td> ALTA </td>
-                <td> SISTEMA JORNADA </td>
-                <td> 67 HORAS </td>
-                <td> R$ 900,00 </td>
+                <td>Franciele</td>
+                <td>Sistema de jornada</td>
+                <td>67 horas</td>
+                <td>R$ 900,00</td>
               </tr>
 
             </tbody>
