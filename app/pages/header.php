@@ -13,8 +13,9 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>HelpOS | Home</title>
+    <title>HELP.ME | Home</title>
     <meta name="description" content="HelpOS, sistema web desenvolvido por Matheus Brunelli e Armando Bretas.">
+    <link rel="shortcut icon" href="../assets/img/icon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap">
@@ -22,6 +23,7 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
@@ -35,6 +37,7 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 </head>
 

@@ -40,17 +40,3 @@ const editar = (idusuario, nome, email, telefone, idtipousuario, identidade) => 
     $('#add-usuario').modal('show');
     $('#modalUsuarios').modal('hide');
 }
-
-
-
-$('#formTicket')
-    .submit(function(e) {
-        $.ajax({
-            url: 'FormSubmitUrl',
-            type: 'POST',
-            data: new FormData(this),
-            processData: false,
-            contentType: false
-        });
-        e.preventDefault();
-    });

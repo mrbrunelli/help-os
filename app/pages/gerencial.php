@@ -90,7 +90,7 @@
       <div class="table-responsive p-4 bg-light shadow box">
         <div class="row">
           <div class="col-11">
-            <h2 class="titulo">Em desenvolvimento</h2>
+            <h2 class="titulo">Em análise</h2>
           </div>
           <div class="col-1">
             <div class="dropdown">

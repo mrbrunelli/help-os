@@ -1,10 +1,53 @@
 <?php
-
-
+date_default_timezone_set('America/Sao_Paulo');
 require_once 'conexao.php';
 require_once 'funcoes.php';
 
 if (isset($_GET['service'])) {
+
+
+
+  if ($_GET['service'] == 'ticket') { 
+    session_start();
+    $user_agents = array("iPhone","iPad","Android","webOS","BlackBerry","iPod","Symbian","IsGeneric");
+    foreach($user_agents as $user_agent){
+        if (strpos($_SERVER['HTTP_USER_AGENT'], $user_agent) !== FALSE) {
+            $mobile = TRUE;
+            $modelo = $user_agent;
+            break;
+        }
+    }
+    if(!$mobile)
+        $modelo = 'Computador';
+
+    $ticket = array(
+      'titulo' => $_POST['tituloticket'],
+      'descricao' => $_POST['descricaoticket'],
+      'datahoraabertura' => date('Y-m-d H:i:s'),
+      'idusuario' => $_SESSION['UsuarioID'],
+      'idtipoticket' => $_POST['idtipoticket'],
+      'idcategoriaticket' => $_POST['idcategoriaticket'],
+      'idsituacaoticket' => 1,
+      'ip' => $_SERVER['REMOTE_ADDR'],
+      'dispositivo' => $modelo,
+      'modelo' => $user_agent
+    );
+
+    var_dump($ticket);
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 
   if ($_GET['service'] == 'login') {
     $email = $_POST['email'];

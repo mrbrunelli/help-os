@@ -101,8 +101,8 @@
               <div class="modal-body">
 
                   <div class="container">
-                      <!-- FORMULARIO DE TICKETS -->
-                      <form id="formTicket" action="index.php?pg=home" enctype="multipart/form-data" method="post">
+                      <form id="formTicket" action="../../backend/services.php?service=ticket" enctype="multipart/form-data" method="post">
+                          <!-- FORMULARIO DE TICKETS -->
                           <div class="form-row">
                               <div class="col-md-6 col-sm-12">
                                   <div class="form-group">
@@ -149,12 +149,12 @@
                                   </div>
                               </div>
                           </div>
+                          <div class="modal-footer">
+                              <button type="reset" class="btn btn-light" data-dismiss="modal"><i class="far fa-times-circle"></i> Fechar</button>
+                              <button type="submit" class="btn btn-dark"><i class="far fa-check-circle"></i> Salvar</button>
+                          </div>
                       </form>
                   </div>
-              </div>
-              <div class="modal-footer">
-                  <button type="reset" class="btn btn-light" data-dismiss="modal"><i class="far fa-times-circle"></i> Fechar</button>
-                  <button type="submit" class="btn btn-dark"><i class="far fa-check-circle"></i> Salvar</button>
               </div>
           </div>
       </div>

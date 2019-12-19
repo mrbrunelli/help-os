@@ -33,7 +33,7 @@
 
         <!-- SEGUNDO FOOTER  -->
         <div class="py-5 bg-dark text-light text-center">
-            <h2 class="font-weight-light">HelpOS - Serviços na ponta do click</h2>
+            <h2 class="font-weight-light">HELP.ME - Serviços na ponta do click</h2>
             <p class="lead">Desenvolvido por Matheus Brunelli & Armando Bretas</p>
             <p class="font-weight-light">Todos os direitos reservados - 2019</p>
         </div>
