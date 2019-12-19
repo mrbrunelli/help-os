@@ -11,7 +11,7 @@ if (isset($_GET['element'])) {
     if ($_GET['element'] == 'meustickets') {
         session_start();
         $idusuario = $_SESSION['UsuarioID'];
-        
+
         $table = "ticket t";
 
         $params = " LEFT JOIN categoria_ticket c   ON c.idcategoriaticket=t.idcategoriaticket
@@ -31,14 +31,15 @@ if (isset($_GET['element'])) {
                     ,pt.cor
                     ,a.foto
                     ,CASE
-                        WHEN t.dataprevisao IS NULL THEN 0
+                        WHEN t.idsituacaoticket = 4 THEN 0
+                        WHEN t.idsituacaoticket = 5 THEN 0
                         WHEN t.idsituacaoticket = 3 THEN 100
-                        ELSE t.dataprevisao-date(t.dataabertura) 
+                        WHEN t.dataprevisao IS NULL THEN 0
+                        ELSE (DATEDIFF(current_date, date (t.datahoraabertura)) / DATEDIFF( t.dataprevisao,date(t.datahoraabertura)))*100
                     END AS progresso ";
 
 
-        $tickets = DBRead($table , $params, $fields);
-
+        $tickets = DBRead($table, $params, $fields);
         if ($tickets > 0) {
 
 
@@ -74,29 +75,35 @@ if (isset($_GET['element'])) {
             <tbody>
             ';
             foreach ($tickets as $d) {
-                $d['atendente'] ? $atendente = '<img src="../assets/img/user.png" width="20" alt=""> '.$d['atendente'] : $atendente = '';
+
+
+                $d['atendente'] ? $atendente = '<img src="../assets/img/user.png" width="20" alt=""> ' . $d['atendente'] : $atendente = '';
                 $d['situacao'] == 'Pendente' ? $sts = "black" : $sts = "grey";
                 $d['progresso'] == 100 ? $bg_prog = "bg-success" : $bg_prog = "bg-dark";
+
                 if ($d['dataprevisao']) {
+
+                    $d['progresso'] > 0 ? $perc = "" : $perc = number_format($d['progresso'],2,',','.').'%';
+
                     $prog = '
                     <div class="progress">
-                        <div class="'.$bg_prog.' progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="'.$d['progresso'].'" aria-valuemin="0" aria-valuemax="100" style="width:'.$d['progresso'].'%">'.$d['progresso'].'%</div>
+                        <div class="' . $bg_prog . ' progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="' . $d['progresso'] . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $d['progresso'] . '%">'.$perc.'</div>
                     </div>
                     ';
                 } else {
-                    $prog="";
+                    $prog = "";
                 }
 
                 echo '
-                <tr style="color:'.$sts.' !important">
+                <tr style="color:' . $sts . ' !important">
                     <th scope="row">' . $d['idticket'] . '</th>
-                    <th>' . date('d/m/y H:i',strtotime($d['datahoraabertura'])) . '</th>
+                    <th>' . date('d/m/y H:i', strtotime($d['datahoraabertura'])) . '</th>
                     <th>' . $d['titulo'] . '</th>
                     <th>' . $d['situacao'] . '</th>
                     <th>' . $d['categoria'] . '</th>
                     <th>' . $d['tipo'] . '</th>
-                    <td>'.$atendente.'</td>
-                    <td>'.$prog.'</td>
+                    <td>' . $atendente . '</td>
+                    <td>' . $prog . '</td>
                 </tr>
                 ';
             }
