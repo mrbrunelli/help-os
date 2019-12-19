@@ -119,6 +119,9 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
             <li class="nav-item">
                 <a href="index.php?pg=home" class="nav-link ativo">Home</a>
             </li>
+            <li class="nav-item">
+                <a href="#sobre" class="nav-link ativo">Sobre</a>
+            </li>
             <li class="nav-item" <?php echo $menu; ?>>
                 <a href="index.php?pg=gerencial" class="nav-link">Gerencial</a>
             </li>

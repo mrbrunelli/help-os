@@ -2,13 +2,27 @@
 $(document).ready(function() {
     $('#telefone').mask('(00) 0 0000-0000')
     $('#custohora').mask("#.##0,00", { reverse: true })
-    $('#table').DataTable({
+    $('#dd').DataTable({
         dom: 'Bfrtip',
         buttons: [
             'excelHtml5',
             'csvHtml5',
             'pdfHtml5'
         ]
+    })
+})
+
+//FUNÇÃO DO SCROLL SUAVE
+$(function() {
+    $('a[href*="#"]:not([href="#"])').click(function() {
+
+        var target = $(this.hash);
+
+        if (target.length) {
+            $('html, body').animate({ scrollTop: target.offset().top }, 500)
+            return false;
+        }
+
     })
 })
 

@@ -9,16 +9,27 @@ if (isset($_GET['service'])) {
 
   if ($_GET['service'] == 'ticket') { 
     session_start();
-    $user_agents = array("iPhone","iPad","Android","webOS","BlackBerry","iPod","Symbian","IsGeneric");
-    foreach($user_agents as $user_agent){
-        if (strpos($_SERVER['HTTP_USER_AGENT'], $user_agent) !== FALSE) {
-            $mobile = TRUE;
-            $modelo = $user_agent;
-            break;
-        }
+    $useragent = $_SERVER['HTTP_USER_AGENT'];
+    if (preg_match('|MSIE ([0-9].[0-9]{1,2})|',$useragent,$matched)) {
+      $browser_version=$matched[1];
+      $browser = 'IE';
+    } elseif (preg_match( '|Opera/([0-9].[0-9]{1,2})|',$useragent,$matched)) {
+      $browser_version=$matched[1];
+      $browser = 'Opera';
+    } elseif(preg_match('|Firefox/([0-9\.]+)|',$useragent,$matched)) {
+      $browser_version=$matched[1];
+      $browser = 'Firefox';
+    } elseif(preg_match('|Chrome/([0-9\.]+)|',$useragent,$matched)) {
+      $browser_version=$matched[1];
+      $browser = 'Chrome';
+    } elseif(preg_match('|Safari/([0-9\.]+)|',$useragent,$matched)) {
+      $browser_version=$matched[1];
+      $browser = 'Safari';
+    } else {
+      // browser not recognized!
+      $browser_version = null;
+      $browser= 'desconhecido';
     }
-    if(!$mobile)
-        $modelo = 'Computador';
 
     $ticket = array(
       'titulo' => $_POST['tituloticket'],
@@ -29,12 +40,17 @@ if (isset($_GET['service'])) {
       'idcategoriaticket' => $_POST['idcategoriaticket'],
       'idsituacaoticket' => 1,
       'ip' => $_SERVER['REMOTE_ADDR'],
-      'dispositivo' => $modelo,
-      'modelo' => $user_agent
+      'navegador' => $browser."  ".$browser_version,
+      'idprioridadeticket' => 1
     );
 
-    var_dump($ticket);
+    $insert = DBCreate('ticket',$ticket);
 
+    if ($insert) {
+      Header('Location: ../app/pages/index.php?pg=home&r=success');
+    } else {
+      Header('Location: ../app/pages/index.php?pg=home&r=error'); 
+    }
   }
 
 
