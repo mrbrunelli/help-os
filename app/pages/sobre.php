@@ -94,39 +94,6 @@
                     <p class="lead">Armando Bretas</p>
                     <h2>Agilidade</h2>
                     <p class="lead">Maior velocidade e qualidade no atendimento de demandas.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<div class="container margem">
-    <div class="text-center pb-5">
-        <h1 class="font-weight-light">Dúvidas?</h1>
-        <h3 class="font-weight-light">Entre em contato conosco</h3>
-    </div>
-    <div class="row text-center">
-        <div class="col-6">
-            <ul>
-                <li>
-                    <!-- CONTATO DOS DESENVOLVEDORES  -->
-                    <p class="lead">Matheus Brunelli</p>
-                    <p><i class="fas fa-envelope"></i> matheus.brunelli@gazin.com.br</p>
-                    <p><i class="fab fa-github"></i><a href="https://github.com/mrbrunelli" target="_blank"> github.com/mrbrunelli</a></p>
-                </li>
-            </ul>
-        </div>
-        <div class="col-6">
-            <ul>
-                <li>
-                    <!-- CONTATO DOS DESENVOLVEDORES  -->
-                    <p class="lead">Armando Bretas</p>
-                    <p><i class="fas fa-envelope"></i> armando.luiz@gazin.com.br</p>
-                    <p><i class="fab fa-github"></i><a href="https://github.com/armandobretas" target="_blank"> github.com/armandobretas</a></p>
-                </li>
-            </ul>
         </div>
     </div>
 </div>
