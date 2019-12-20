@@ -1,4 +1,51 @@
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="../assets/img/dash.png" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h5>Qlik Sense</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="../assets/img/dev.png" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h5>Desenvolvimento Web</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="../assets/img/mobile.png" width="150" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h5>Desenvolvimento Mobile</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="../assets/img/suporte.png" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h5>Suporte</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
