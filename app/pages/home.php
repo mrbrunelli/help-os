@@ -5,7 +5,6 @@
 
     setInterval(function(){
         meusTickets();
-        console.log('atualizado');
     },10000)
 
     const meusTickets = () => $('#meus-tickets').load('../../backend/elements.php?element=meustickets');

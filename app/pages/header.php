@@ -43,11 +43,12 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
 
 <body>
 
-    <header>
+    <header id="inicio">
         <!-- PRIMEIRO NAV  -->
         <nav class="navbar-nav navbar-dark bg-dark shadow">
             <ul class="navbar nav justify-content-between py-4">
                 <li class="nav-item">
+
 
                     <!-- BARRA DE SEARCH DO NAV  -->
                     <div class="searching">
@@ -84,6 +85,7 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
                         shclose.addEventListener('click', closesearch);
                     </script>
 
+
                 </li>
                 <li class="nav-item">
                     <a href="index.php?pg=home" class="navbar-brand">
@@ -115,7 +117,7 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
     <nav class="navbar-nav navbar-light bg-light shadow sticky-top">
         <ul class="navbar nav justify-content-around py-3 container">
             <li class="nav-item">
-                <a href="index.php?pg=home" class="nav-link ativo">Home</a>
+                <a href="index.php?pg=home" class="nav-link">Home</a>
             </li>
             <li class="nav-item" <?php echo $menu; ?>>
                 <a href="index.php?pg=gerencial" class="nav-link">Gerencial</a>
@@ -134,7 +136,7 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
                 </li>
             </div>
             <li class="nav-item">
-                <a href="#sobre" class="nav-link ativo">Sobre</a>
+                <a href="index.php?pg=sobre" class="nav-link">Sobre</a>
             </li>
         </ul>
     </nav>

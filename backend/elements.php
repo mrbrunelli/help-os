@@ -10,7 +10,7 @@ if (isset($_GET['element'])) {
     if ($_GET['element'] == 'conteudoTicket') {
 
         $table = "ticket t";
-        
+
         $params =  "LEFT JOIN usuario u on u.idusuario=t.idusuario
                     LEFT JOIN categoria_ticket c on c.idcategoriaticket=t.idcategoriaticket
                     LEFT JOIN tipo_ticket tp on tp.idtipoticket = t.idtipoticket
@@ -28,7 +28,7 @@ if (isset($_GET['element'])) {
                     tp.nome as tipo
                     ";
 
-        $ticket = DBRead($table,$params,$fields);
+        $ticket = DBRead($table, $params, $fields);
         $titulo = $ticket[0]['titulo'];
         $descricao = $ticket[0]['descricao'];
         $data = $ticket[0]['datahoraabertura'];
@@ -43,7 +43,7 @@ if (isset($_GET['element'])) {
         switch ($nav) {
 
             case 'Chrome':
-                $browser = '<i class="fab fa-chrome"></i> '. $nav;
+                $browser = '<i class="fab fa-chrome"></i> ' . $nav;
                 break;
             case 'Firefox':
                 $browser = '<i class="fab fa-firefox-browser"></i> ' . $nav;
@@ -61,25 +61,22 @@ if (isset($_GET['element'])) {
         echo '
             <div class="row">
                 <div class="col-sm-3">
-                    <p> Requerente: <b> '.$usuario.' </b> </p>
-                    <p> Atendente: <img src="../assets/img/user.png" width="20"> <b> '.$atendente.'</b></p>
+                    <p> Requerente: <b> ' . $usuario . ' </b> </p>
+                    <p> Atendente: <img src="../assets/img/user.png" width="20"> <b> ' . $atendente . '</b></p>
                 </div>
                 <div class="col-sm-3">
-                    <p> Abertura: <b> '.date('d/m/y H:i',strtotime($data)).'</b> </p>
-                    <p> Categoria: <b> '.$categoria.'</b></p>
+                    <p> Abertura: <b> ' . date('d/m/y H:i', strtotime($data)) . '</b> </p>
+                    <p> Categoria: <b> ' . $categoria . '</b></p>
                 </div>
                 <div class="col-sm-3">
-                    <p> Status: <b> '.$situacao.'</b> </p>
-                    <p> Tipo: <b> '.$tipo.'</b> </p>
+                    <p> Status: <b> ' . $situacao . '</b> </p>
+                    <p> Tipo: <b> ' . $tipo . '</b> </p>
                 </div>
                 <div class="col-sm-3">
-                    <p> IP: <b> '.$ip.'</b></p>
-                    <p> Navegador: <b> '.$browser.'</b></p>
+                    <p> IP: <b> <a href="https://desktopcentral10.gazin.com.br/">'. $ip . '</a></b></p>
+                    <p> Navegador: <b> ' . $browser . '</b></p>
                 </div>
-                <div class="col-sm-6">
-                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
-                </div>
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
                 </div>
             </div>
@@ -163,7 +160,7 @@ if (isset($_GET['element'])) {
                 $d['progresso'] == '0' ? $perc = "" : $perc = number_format($d['progresso'], 2, ',', '.') . '%';
 
                 echo '
-                <tr style="cursor:pointer;color:' . $sts . ' !important" onclick="modalTicket(' . $d['idticket'] . ',`'.$d['titulo'].'`)">
+                <tr style="cursor:pointer;color:' . $sts . ' !important" onclick="modalTicket(' . $d['idticket'] . ',`' . $d['titulo'] . '`)">
                     <th scope="row">' . $d['idticket'] . '</th>
                     <th>' . date('d/m/y H:i', strtotime($d['datahoraabertura'])) . '</th>
                     <th>' . $d['titulo'] . '</th>
