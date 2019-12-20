@@ -40,7 +40,7 @@ if (isset($_GET['service'])) {
       'idcategoriaticket' => $_POST['idcategoriaticket'],
       'idsituacaoticket' => 1,
       'ip' => $_SERVER['REMOTE_ADDR'],
-      'navegador' => $browser."  ".$browser_version,
+      'navegador' => $browser,
       'idprioridadeticket' => 1
     );
 

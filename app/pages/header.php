@@ -58,15 +58,13 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
                         </center>
 
                         <div class="search-inline">
-                            <form>
-                                <input type="text" class="form-control" placeholder="Digite o número do Ticket...">
-                                <button type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                                <a href="javascript:void(0)" class="search-close">
-                                    <i class="fa fa-times"></i>
-                                </a>
-                            </form>
+                            <input type="text" class="form-control" id="idticket_search" placeholder="Digite o número do Ticket...">
+                            <button type="submit" onclick="modalTicket($('#idticket_search').val())">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            <a href="javascript:void(0)" class="search-close">
+                                <i class="fa fa-times"></i>
+                            </a>
                         </div>
                     </div>
 
@@ -119,9 +117,6 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
             <li class="nav-item">
                 <a href="index.php?pg=home" class="nav-link ativo">Home</a>
             </li>
-            <li class="nav-item">
-                <a href="#sobre" class="nav-link ativo">Sobre</a>
-            </li>
             <li class="nav-item" <?php echo $menu; ?>>
                 <a href="index.php?pg=gerencial" class="nav-link">Gerencial</a>
             </li>
@@ -138,6 +133,9 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
                     </div>
                 </li>
             </div>
+            <li class="nav-item">
+                <a href="#sobre" class="nav-link ativo">Sobre</a>
+            </li>
         </ul>
     </nav>
 

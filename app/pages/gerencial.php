@@ -110,7 +110,7 @@
             <tr>
               <td>Prioridade</td>
               <td>Título</td>
-              <td>Previsão</td>
+              <td>Progresso</td>
               <td>Opções</td>
             </tr>
           </thead>

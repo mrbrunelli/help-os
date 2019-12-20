@@ -7,6 +7,85 @@ require_once 'funcoes.php';
 
 if (isset($_GET['element'])) {
 
+    if ($_GET['element'] == 'conteudoTicket') {
+
+        $table = "ticket t";
+        
+        $params =  "LEFT JOIN usuario u on u.idusuario=t.idusuario
+                    LEFT JOIN categoria_ticket c on c.idcategoriaticket=t.idcategoriaticket
+                    LEFT JOIN tipo_ticket tp on tp.idtipoticket = t.idtipoticket
+                    LEFT JOIN atendente at on at.idatendente=t.idatendente
+                    LEFT JOIN prioridade_ticket p on p.idprioridadeticket = t.idprioridadeticket
+                    LEFT JOIN situacao_ticket s on s.idsituacaoticket=t.idsituacaoticket
+                    where t.idticket = {$_GET['idticket']}";
+
+        $fields = "t.*,
+                    SUBSTRING_INDEX(u.nome,' ',1) as usuario,
+                    c.nome as categoria,
+                    at.nome as atendente,
+                    p.nome as prioridade,
+                    s.nome as situacao,
+                    tp.nome as tipo
+                    ";
+
+        $ticket = DBRead($table,$params,$fields);
+        $titulo = $ticket[0]['titulo'];
+        $descricao = $ticket[0]['descricao'];
+        $data = $ticket[0]['datahoraabertura'];
+        $usuario = $ticket[0]['usuario'];
+        $tipo = $ticket[0]['tipo'];
+        $categoria = $ticket[0]['categoria'];
+        $situacao = $ticket[0]['situacao'];
+        $ip = $ticket[0]['ip'];
+        $nav = $ticket[0]['navegador'];
+        $prioridade = $ticket[0]['prioridade'];
+        $atendente = $ticket[0]['atendente'];
+        switch ($nav) {
+
+            case 'Chrome':
+                $browser = '<i class="fab fa-chrome"></i> '. $nav;
+                break;
+            case 'Firefox':
+                $browser = '<i class="fab fa-firefox-browser"></i> ' . $nav;
+                break;
+            case 'IE':
+                $browser = '<i class="fab fa-edge"></i> ' . $nav;
+                break;
+            case 'Opera':
+                $browser = '<i class="fab fa-opera"></i> ' . $nav;
+                break;
+            default:
+                $browser = '<i class="fas fa-question-circle"></i> Desconhecido';
+                break;
+        }
+        echo '
+            <div class="row">
+                <div class="col-sm-3">
+                    <p> Requerente: <b> '.$usuario.' </b> </p>
+                    <p> Atendente: <img src="../assets/img/user.png" width="20"> <b> '.$atendente.'</b></p>
+                </div>
+                <div class="col-sm-3">
+                    <p> Abertura: <b> '.date('d/m/y H:i',strtotime($data)).'</b> </p>
+                    <p> Categoria: <b> '.$categoria.'</b></p>
+                </div>
+                <div class="col-sm-3">
+                    <p> Status: <b> '.$situacao.'</b> </p>
+                    <p> Tipo: <b> '.$tipo.'</b> </p>
+                </div>
+                <div class="col-sm-3">
+                    <p> IP: <b> '.$ip.'</b></p>
+                    <p> Navegador: <b> '.$browser.'</b></p>
+                </div>
+                <div class="col-sm-6">
+                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+                <div class="col-sm-6">
+                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                </div>
+            </div>
+        ';
+    }
+
 
     if ($_GET['element'] == 'meustickets') {
         session_start();
@@ -81,21 +160,10 @@ if (isset($_GET['element'])) {
                 $d['situacao'] == 'Pendente' ? $sts = "black" : $sts = "grey";
                 $d['progresso'] == 100 ? $bg_prog = "bg-success" : $bg_prog = "bg-dark";
 
-                if ($d['dataprevisao']) {
-
-                    $d['progresso'] > 0 ? $perc = "" : $perc = number_format($d['progresso'],2,',','.').'%';
-
-                    $prog = '
-                    <div class="progress">
-                        <div class="' . $bg_prog . ' progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="' . $d['progresso'] . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $d['progresso'] . '%">'.$perc.'</div>
-                    </div>
-                    ';
-                } else {
-                    $prog = "";
-                }
+                $d['progresso'] == '0' ? $perc = "" : $perc = number_format($d['progresso'], 2, ',', '.') . '%';
 
                 echo '
-                <tr style="color:' . $sts . ' !important">
+                <tr style="cursor:pointer;color:' . $sts . ' !important" onclick="modalTicket(' . $d['idticket'] . ',`'.$d['titulo'].'`)">
                     <th scope="row">' . $d['idticket'] . '</th>
                     <th>' . date('d/m/y H:i', strtotime($d['datahoraabertura'])) . '</th>
                     <th>' . $d['titulo'] . '</th>
@@ -103,7 +171,12 @@ if (isset($_GET['element'])) {
                     <th>' . $d['categoria'] . '</th>
                     <th>' . $d['tipo'] . '</th>
                     <td>' . $atendente . '</td>
-                    <td>' . $prog . '</td>
+                    <td>
+                        <div class="progress">
+                            <div class="' . $bg_prog . ' progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="' . $d['progresso'] . '" aria-valuemin="0" aria-valuemax="100" style="width:' . $d['progresso'] . '%">
+                            </div>
+                        </div>
+                    </td>
                 </tr>
                 ';
             }

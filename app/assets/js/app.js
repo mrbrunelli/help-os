@@ -54,3 +54,9 @@ const editar = (idusuario, nome, email, telefone, idtipousuario, identidade) => 
     $('#add-usuario').modal('show');
     $('#modalUsuarios').modal('hide');
 }
+
+const modalTicket = (idticket, titulo) => {
+    $('#modalTicket').modal('show')
+    $('#conteudoTicket').load(`../../backend/elements.php?element=conteudoTicket&idticket=${idticket}`)
+    $('#titulo-ticket').html(titulo)
+}

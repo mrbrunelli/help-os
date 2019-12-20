@@ -96,7 +96,6 @@
                   <div class="bg-dark text-light col-12 text-center">
                       <h1 class="font-weight-light py-3">Novo ticket</h1>
                   </div>
-                  </button>
               </div>
               <div class="modal-body">
 
@@ -174,13 +173,39 @@
                   <div class="bg-dark text-light col-12 text-center">
                       <h1 class="font-weight-light py-3">Lista de Usuários</h1>
                   </div>
-                  </button>
               </div>
               <div class="modal-body">
                   <div class="row">
                       <div class="col-sm-12">
                           <div class="table-responsive" id="conteudoUsuarios">
                               <!-- AQUI DENTRO CARREGA O SELECT DO BANCO E TRAS OS USUARIOS  -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="reset" class="btn btn-light" data-dismiss="modal"><i class="far fa-times-circle"></i> Fechar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+  <!-- MODAL MAIS DETALHES DO TICKET -->
+  <div class="modal fade" id="modalTicket" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+              <div>
+                  <div class="bg-dark text-light col-12 text-center">
+                      <h1 class="font-weight-light py-3" id="titulo-ticket"></h1>
+                  </div>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                      <div class="col-sm-12">
+                          <div class="table-responsive" id="conteudoTicket">
+
                           </div>
                       </div>
                   </div>
