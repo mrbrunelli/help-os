@@ -1,46 +1,68 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6 my-4">
             <div class="row">
-                <div class="col-md-6">
-                    <img src="../assets/img/dash.png" alt="">
+                <div class="col-md-6 text-center">
+                    <img src="../assets/img/dash.png" class="sobre">
                 </div>
                 <div class="col-md-6">
-                    <h5>Qlik Sense</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odit.</p>
+                    <h5>Business Intelligence</h5>
+                    <p class="lead">Os dashboards fornecem informações sobre oportunidades no negócio.</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 my-4">
             <div class="row">
-                <div class="col-md-6">
-                    <img src="../assets/img/dev.png" alt="">
+                <div class="col-md-6 text-center">
+                    <img src="../assets/img/dev.png" class="sobre">
                 </div>
                 <div class="col-md-6">
                     <h5>Desenvolvimento Web</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odit.</p>
+                    <p class="lead">Possibilita aplicar inovação com ganho de performance.</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 my-4">
             <div class="row">
-                <div class="col-md-6">
-                    <img src="../assets/img/mobile.png" width="150" alt="">
+                <div class="col-md-6 text-center">
+                    <img src="../assets/img/mobile.png" width="150" class="sobre">
                 </div>
                 <div class="col-md-6">
                     <h5>Desenvolvimento Mobile</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odit.</p>
+                    <p class="lead">Soluções que podem ser acessadas e gerar produtividade em qualquer lugar.</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 my-4">
             <div class="row">
-                <div class="col-md-6">
-                    <img src="../assets/img/suporte.png" alt="">
+                <div class="col-md-6 text-center">
+                    <img src="../assets/img/database.png" class="sobre">
                 </div>
                 <div class="col-md-6">
-                    <h5>Suporte</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odit.</p>
+                    <h5>Extração de Dados</h5>
+                    <p class="lead">Dados aleatórios organizados para tomada de decisão mais assertiva</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 my-4">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img src="../assets/img/ia.png" class="sobre">
+                </div>
+                <div class="col-md-6">
+                    <h5>Automação de Processos</h5>
+                    <p class="lead">Uso da inteligência artificial a favor da simplificação.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 my-4">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img src="../assets/img/process.png" class="sobre">
+                </div>
+                <div class="col-md-6">
+                    <h5>Agilidade</h5>
+                    <p class="lead">Maior velocidade e qualidade no atendimento de demandas.</p>
                 </div>
             </div>
         </div>
@@ -60,7 +82,6 @@
                 <li>
                     <!-- CONTATO DOS DESENVOLVEDORES  -->
                     <p class="lead">Matheus Brunelli</p>
-                    <p><i class="fas fa-phone-alt"></i> Ramal: 2832</p>
                     <p><i class="fas fa-envelope"></i> matheus.brunelli@gazin.com.br</p>
                     <p><i class="fab fa-github"></i><a href="https://github.com/mrbrunelli" target="_blank"> github.com/mrbrunelli</a></p>
                 </li>
@@ -71,7 +92,6 @@
                 <li>
                     <!-- CONTATO DOS DESENVOLVEDORES  -->
                     <p class="lead">Armando Bretas</p>
-                    <p><i class="fas fa-phone-alt"></i> Ramal: 2832</p>
                     <p><i class="fas fa-envelope"></i> armando.luiz@gazin.com.br</p>
                     <p><i class="fab fa-github"></i><a href="https://github.com/armandobretas" target="_blank"> github.com/armandobretas</a></p>
                 </li>

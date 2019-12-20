@@ -156,6 +156,9 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
         if ($_GET['pg'] == 'gerencial') {
             $breadcrumb = "Gerencial";
         }
+        if ($_GET['pg'] == 'sobre') {
+            $breadcrumb = "Sobre";
+        }
     }
 
 
@@ -164,7 +167,7 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent" style="padding: 0.75rem 0rem !important;">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">'. $breadcrumb . '</li>
+                    <li class="breadcrumb-item active" aria-current="page">' . $breadcrumb . '</li>
                 </ol>
             </nav>
         </div>';

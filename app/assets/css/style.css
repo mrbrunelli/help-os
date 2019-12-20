@@ -196,6 +196,15 @@
     .dropdown-item {
         cursor: pointer;
     }
+    /* -----------------------------------------------------CONTEUDO DA PAGINA SOBRE  */
+    
+    .sobre {
+        transition: 300ms;
+    }
+    
+    .sobre:hover {
+        transform: scale(1.1);
+    }
     /* ---------------------------------------------------- FOOTER DA PAGINA */
     
     ul {
