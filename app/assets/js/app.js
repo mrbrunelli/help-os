@@ -60,3 +60,8 @@ const modalTicket = (idticket, titulo) => {
     $('#conteudoTicket').load(`../../backend/elements.php?element=conteudoTicket&idticket=${idticket}`)
     $('#titulo-ticket').html(titulo)
 }
+
+
+const limit = (val) => {
+    $('#countCaracter').html(val.length)
+}

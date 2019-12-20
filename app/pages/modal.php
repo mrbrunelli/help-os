@@ -14,7 +14,7 @@
                       <input type="hidden" id="idusuario" value="0">
                       <div class="form-row">
                           <div class="form-group col-md-6">
-                              <label for="tipo-usuario">Tipo do usuário</label>
+                              <label for="tipo-usuario"><b>Tipo do usuário: </b></label>
                               <select class="form-control" name="tipo-usuario" id="tipo-usuario">
                                   <?php
                                     foreach (DBRead('tipousuario') as $t) {
@@ -24,26 +24,26 @@
                               </select>
                           </div>
                           <div class="form-group col-md-6">
-                              <label for="entidade">Entidade</label>
+                              <label for="entidade"><b>Entidade: </b></label>
                               <select name="entidade" id="entidade" class="form-control">
                                   <option selected>Gazin</option>
                               </select>
                           </div>
                           <div class="form-group col-md-8">
-                              <label for="nome">Nome</label>
+                              <label for="nome"><b>Nome: </b></label>
                               <input type="text" class="form-control" id="nome">
                           </div>
                           <div class="form-group col-md-4" id="div-telefone">
-                              <label for="telefone">Telefone</label>
+                              <label for="telefone"><b>Telefone: </b></label>
                               <input type="tel" class="form-control" id="telefone" placeholder="(__)_ ____-____">
                           </div>
                           <div class="form-group col-md-4" id="div-foto" style="display:none">
-                              <label for="foto">Foto</label>
+                              <label for="foto"><b>Foto: </b></label>
                               <input type="file" class="form-control" name="foto[]" id="foto">
                               <small>Tamanho máximo: 500kb</small>
                           </div>
                           <div class="form-group col-md-4" id="div-custohora" style="display: none">
-                              <label for="custohora">Custo/Hora</label>
+                              <label for="custohora"><b>Custo/Hora: </b></label>
                               <div class="input-group">
                                   <div class="input-group-prepend">
                                       <div class="input-group-text">
@@ -54,15 +54,15 @@
                               </div>
                           </div>
                           <div class="form-group col-md-12">
-                              <label for="email">Email</label>
+                              <label for="email"><b>Email: </b></label>
                               <input type="email" class="form-control" id="email" placeholder="exemplo@exemplo.com.br">
                           </div>
                           <div class="form-group col-md-12">
-                              <label for="senha">Senha</label>
+                              <label for="senha"><b>Senha: </b></label>
                               <input type="password" class="form-control" id="senha">
                           </div>
                           <div class="form-group col-md-12">
-                              <label for="confirmasenha">Confirmar senha</label>
+                              <label for="confirmasenha"><b>Confirmar senha: </b></label>
                               <div class="input-group">
                                   <div class="input-group-prepend">
                                       <div class="input-group-text">
@@ -105,7 +105,7 @@
                           <div class="form-row">
                               <div class="col-md-6 col-sm-12">
                                   <div class="form-group">
-                                      <label for="idtipoticket">Selecione o tipo </label>
+                                      <label for="idtipoticket"><b>Selecione o tipo: </b> </label>
                                       <select name="idtipoticket" id="idtipoticket" class="form-control" required>
                                           <option value=""></option>
                                           <?php
@@ -118,7 +118,7 @@
                               </div>
                               <div class="col-md-6 col-sm-12">
                                   <div class="form-group">
-                                      <label for="idcategoriaticket">Categoria: </label>
+                                      <label for="idcategoriaticket"><b>Categoria: </b> </label>
                                       <select name="idcategoriaticket" id="idcategoriaticket" class="form-control" required>
                                           <option value=""></option>
                                           <?php
@@ -131,19 +131,20 @@
                               </div>
                               <div class="col-md-12 col-sm-12">
                                   <div class="form-group">
-                                      <label for="tituloticket">Título: </label>
-                                      <input type="text" class="form-control" name="tituloticket" id="tituloticket" required>
+                                      <label for="tituloticket"><b>Título: </b> </label>
+                                      <input type="text" class="form-control" name="tituloticket" id="tituloticket" required onkeyup="limit(this.value)" maxlength="40">
+                                      <small> <span id="countCaracter" class="font-weight-bold">0</span>/40</small>
                                   </div>
                               </div>
                               <div class="col-md-12 col-sm-12">
                                   <div class="form-group">
-                                      <label for="anexoticket">Anexos: </label>
+                                      <label for="anexoticket"><b>Anexos: </b> </label>
                                       <input type="file" name="anexoticket[]" multiple="multiple" id="anexoticket" class="form-control">
                                   </div>
                               </div>
                               <div class="col-md-12 col-sm-12">
                                   <div class="form-group">
-                                      <label for="descricaoticket">Descrição: </label>
+                                      <label for="descricaoticket"><b>Descrição: </b> </label>
                                       <textarea class="form-control" rows="4" name="descricaoticket" id="descricaoticket"></textarea>
                                   </div>
                               </div>
@@ -190,6 +191,7 @@
       </div>
   </div>
 
+  
 
 
   <!-- MODAL MAIS DETALHES DO TICKET -->

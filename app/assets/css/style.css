@@ -106,7 +106,7 @@
     
     body {
         margin: 0;
-        /* font-family: 'Open Sans', 'Montserrat', Arial; */
+        font-family: 'Open Sans', 'Montserrat', Arial;
     }
     
     .sombra {
@@ -173,7 +173,6 @@
     .dark {
         background: #343a40;
         color: #fff;
-        font-weight: bold
     }
     
     .titulo {

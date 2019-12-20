@@ -138,14 +138,14 @@ if (isset($_GET['element'])) {
             </thead>
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Inclusão</th>
-                    <th scope="col">Título</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Atendente</th>
-                    <th scope="col">Progresso</th>
+                    <th scope="col"><b>#</b></th>
+                    <th scope="col"><b>Inclusão</b></th>
+                    <th scope="col"><b>Título</b></th>
+                    <th scope="col"><b>Status</b></th>
+                    <th scope="col"><b>Categoria</b></th>
+                    <th scope="col"><b>Tipo</b></th>
+                    <th scope="col"><b>Atendente</b></th>
+                    <th scope="col"><b>Progresso</b></th>
                 </tr>
             </thead>
             <tbody>
@@ -154,7 +154,7 @@ if (isset($_GET['element'])) {
 
 
                 $d['atendente'] ? $atendente = '<img src="../assets/img/user.png" width="20" alt=""> ' . $d['atendente'] : $atendente = '';
-                $d['situacao'] == 'Pendente' ? $sts = "black" : $sts = "grey";
+                $d['situacao'] == 'Pendente' ? $sts = "black" : $sts = "lightgrey";
                 $d['progresso'] == 100 ? $bg_prog = "bg-success" : $bg_prog = "bg-dark";
 
                 $d['progresso'] == '0' ? $perc = "" : $perc = number_format($d['progresso'], 2, ',', '.') . '%';
