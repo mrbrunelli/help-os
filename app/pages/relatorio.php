@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row text-center">
         <div class="col-md-3">
             <div class="d-inline-block p-5 border rounded shadow">
@@ -44,12 +44,10 @@
                 <p>Média custo hora</p>
             </div>
         </div>
-        <div class="col-md-4">
-            <canvas id="oilChart" height="400"></canvas>
-        </div>
-        <div class="col-md-4">
-            <canvas id="myBarChart" height="400"></canvas>
-        </div>
+
+            <canvas id="oilChart" height="300" class="col-md-4"></canvas>
+            <canvas id="myBarChart" height="300" class="col-md-8"></canvas>
+
     </div>
 
 
@@ -64,7 +62,7 @@
 
 <script>
     // GRÁFICO DE PIZZA
-    var oilCanvas = document.getElementById("oilChart");
+    var oilCanvas = document.getElementById("oilChart")
 
     Chart.defaults.global.defaultFontFamily = "Lato"
     Chart.defaults.global.defaultFontSize = 18
@@ -101,14 +99,20 @@
 
 
     // GRAFICO EM BARRAS 
-    var ctx = document.getElementById('myChart').getContext('2d')
+    var ctx = document.getElementById('myBarChart').getContext('2d')
     var chart = new Chart(ctx, {
         // The type of chart we want to create
-        type: 'line',
+        type: 'bar',
 
         // The data for our dataset
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: [
+                <?php
+                    foreach (DBRead('categoria_ticket c', 'left join ticket t on t.idcategoriaticket = c.idcategoriaticket group by 1', 'c.nome, count(idticket) as qtd', 'order by qtd desc') as $cat) {
+                        echo '"' . $cat['nome'] . '",';
+                    }
+                ?>
+            ],
             datasets: [{
                 label: 'My First dataset',
                 backgroundColor: 'rgb(255, 99, 132)',
@@ -117,7 +121,6 @@
             }]
         },
 
-        // Configuration options go here
-        options: {}
+
     })
 </script>
