@@ -61,14 +61,76 @@ if (isset($_GET['element'])) {
         }
 ?>
         <div class="row">
-            <div class="col-sm-12">
-                <p><?=date('d/m/Y H:i',strtotime($abertura))?> </p>
+            <div class="col-sm-9" style="border-right: solid 1px grey">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p><?= date('d/m/Y H:i', strtotime($abertura)) ?> </p>
+                    </div>
+                    <div class="col-sm-12">
+                        <h2><?= $titulo ?> </h2>
+                    </div>
+                    <div class="col-sm-12">
+                        <textarea rows="6" class="form-control" disabled><?= base64_decode($descricao, true) ?></textarea>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <br>
+                        <img src="../assets/img/user.png" width="25" height="25"> Armando Neto - <small><?= date('d/m/y H:i') ?></small>
+                        <textarea rows="2" class="form-control" disabled>Segue o protótipo dos indicadores em anexo</textarea>
+                    </div>
+                    <div class="col-sm-12">
+                        <br>
+                        <img src="../assets/img/user.png" width="25" height="25"> Armando Neto - <small><?= date('d/m/y H:i') ?></small>
+                        <textarea rows="2" class="form-control" disabled>Segue o protótipo dos indicadores em anexo</textarea>
+                    </div>
+                    <div class="col-sm-12">
+                        <br>
+                        <img src="../assets/img/user.png" width="25" height="25"> Armando Neto - <small><?= date('d/m/y H:i') ?></small>
+                        <textarea rows="2" class="form-control" disabled>Segue o protótipo dos indicadores em anexo</textarea>
+                    </div>
+                    <div class="col-sm-12">
+                        <br>
+                        <img src="../assets/img/user.png" width="25" height="25"> Armando Neto - <small><?= date('d/m/y H:i') ?></small>
+                        <textarea rows="2" class="form-control" disabled>Segue o protótipo dos indicadores em anexo</textarea>
+                    </div>
+
+                </div>
             </div>
-            <div class="col-sm-12">
-                <h3><?=$titulo?> </h3>
-            </div>
-            <div class="col-sm-12">
-                <h3><?=$descricao?> </h3>
+            <div class="col-sm-3">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4>Detalhes</h4>
+                    </div>
+                    <div class="col-sm-12">
+                        <p>Situação: <b><?= $situacao ?></b></p>
+                    </div>
+                    <div class="col-sm-12">
+                        <p>Tipo: <b><?= $tipo ?></b></p>
+                    </div>
+                    <div class="col-sm-12">
+                        <p>Categoria: <b><?= $categoria ?></b></p>
+                    </div>
+                    <div class="col-sm-12">
+                        <p>Navegador: <b><?= $browser ?></b></p>
+                    </div>
+                    <div class="col-sm-12">
+                        <p>IP: <b><?= $ip ?></b></p>
+                    </div>
+                    <div class="col-sm-12">
+                        <br>
+                        <h4>Anexos</h4>
+                    </div>
+                    <div class="col-sm-12 py-2">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fa fa-download"></i> Print-tela.png
+                        </button>
+                    </div>
+                    <div class="col-sm-12 py-2">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fa fa-download"></i> Print-erro.png
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 <?php

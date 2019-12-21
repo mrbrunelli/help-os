@@ -33,7 +33,7 @@ if (isset($_GET['service'])) {
 
     $ticket = array(
       'titulo' => $_POST['tituloticket'],
-      'descricao' => $_POST['descricaoticket'],
+      'descricao' => base64_encode($_POST['descricaoticket']),
       'datahoraabertura' => date('Y-m-d H:i:s'),
       'idusuario' => $_SESSION['UsuarioID'],
       'idtipoticket' => $_POST['idtipoticket'],
