@@ -40,6 +40,7 @@ if (isset($_GET['element'])) {
         $nav = $ticket[0]['navegador'];
         $prioridade = $ticket[0]['prioridade'];
         $atendente = $ticket[0]['atendente'];
+        $abertura = $ticket[0]['datahoraabertura'];
         switch ($nav) {
 
             case 'Chrome':
@@ -58,30 +59,35 @@ if (isset($_GET['element'])) {
                 $browser = '<i class="fas fa-question-circle"></i> Desconhecido';
                 break;
         }
-        echo '
-            <div class="row">
-                <div class="col-sm-3">
-                    <p> Requerente: <b> ' . $usuario . ' </b> </p>
-                    <p> Atendente: <img src="../assets/img/user.png" width="20"> <b> ' . $atendente . '</b></p>
-                </div>
-                <div class="col-sm-3">
-                    <p> Abertura: <b> ' . date('d/m/y H:i', strtotime($data)) . '</b> </p>
-                    <p> Categoria: <b> ' . $categoria . '</b></p>
-                </div>
-                <div class="col-sm-3">
-                    <p> Status: <b> ' . $situacao . '</b> </p>
-                    <p> Tipo: <b> ' . $tipo . '</b> </p>
-                </div>
-                <div class="col-sm-3">
-                    <p> IP: <b> <a href="https://desktopcentral10.gazin.com.br/">'. $ip . '</a></b></p>
-                    <p> Navegador: <b> ' . $browser . '</b></p>
-                </div>
-                <div class="col-sm-12">
-                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
-                </div>
+?>
+        <div class="row">
+            <div class="col-sm-12">
+                <p><?=date('d/m/Y H:i',strtotime($abertura))?> </p>
             </div>
-        ';
+            <div class="col-sm-12">
+                <h3><?=$titulo?> </h3>
+            </div>
+            <div class="col-sm-12">
+                <h3><?=$descricao?> </h3>
+            </div>
+        </div>
+<?php
+        exit;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     if ($_GET['element'] == 'meustickets') {

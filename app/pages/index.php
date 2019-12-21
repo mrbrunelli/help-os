@@ -9,10 +9,10 @@ require_once 'header.php';
 require_once 'modal.php';
 
 
-if ($_SESSION['UsuarioTipo'] == '2') {
+if ($_SESSION['UsuarioTipo'] == 3) {
     isset($_GET['pg']) ? $pg = trim($_GET['pg']) : $pg = "gerencial";
 } else {
-    isset($_GET['pg']) ? $pg = trim($_GET['pg']) : $pg = "home";
+    isset($_GET['pg']) ? $pg = trim($_GET['pg']) : $pg = "tickets";
 }
 
 $pg = $pg . ".php";

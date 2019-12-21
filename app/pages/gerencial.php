@@ -1,8 +1,13 @@
+<?php
+if ($_SESSION['UsuarioTipo'] == '1') {
+  echo ' <script> window.location.href="index.php?pg=tickets" </script> ';
+}
+?>
 <div class="container-fluid mb-5">
   <div class="row justify-content-center">
 
     <div class="col-12 col-md-6 col-lg-4 mt-3">
-      <div class="table-responsive p-4 bg-light shadow box">
+      <div class="p-4 bg-light shadow box">
         <div class="row">
           <div class="col-11">
             <h2 class="titulo">Pendente</h2>
@@ -20,69 +25,32 @@
             </div>
           </div>
         </div>
-        <table class="table table-hover bg-white shadow">
-          <thead class="dark">
-            <tr>
-              <td>Inclusão</td>
-              <td>Título</td>
-              <td>Solicitante</td>
-              <td>Opções</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td> <?= date('d/m/y H:i') ?> </td>
-              <td>Novo relatório</td>
-              <td>Luana Isabela</td>
-              <td>
-                <div class="dropdown">
-                  <a type="button" id="dropdownjoinha" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-cogs fa-1em"></i>
-                  </a>
-                  <div class="dropdown-menu shadow" aria-labelledby="dropdownjoinha">
-                    <a class="dropdown-item "><i class="fas fa-search"></i> Detalhes</a>
-                    <a class="dropdown-item"><i class="far fa-thumbs-up"></i> Aceitar</a>
-                    <a class="dropdown-item"><i class="far fa-thumbs-down"></i> Recusar</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td> <?= date('d/m/y H:i') ?> </td>
-              <td>Manutenção portal faturas</td>
-              <td>Franciele</td>
-              <td>
-                <div class="dropdown">
-                  <a type="button" id="dropdownjoinha" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-cogs fa-1em"></i>
-                  </a>
-                  <div class="dropdown-menu shadow" aria-labelledby="dropdownjoinha">
-                    <a class="dropdown-item"><i class="fas fa-search"></i> Detalhes</a>
-                    <a class="dropdown-item"><i class="far fa-thumbs-up"></i> Aceitar</a>
-                    <a class="dropdown-item"><i class="far fa-thumbs-down"></i> Recusar</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td> <?= date('d/m/y H:i') ?> </td>
-              <td>SQL relatório Sabium</td>
-              <td>Marcos Utsunomiya</td>
-              <td>
-                <div class="dropdown">
-                  <a type="button" id="dropdownjoinha" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-cogs fa-1em"></i>
-                  </a>
-                  <div class="dropdown-menu shadow" aria-labelledby="dropdownjoinha">
-                    <a class="dropdown-item"><i class="fas fa-search"></i> Detalhes</a>
-                    <a class="dropdown-item"><i class="far fa-thumbs-up"></i> Aceitar</a>
-                    <a class="dropdown-item"><i class="far fa-thumbs-down"></i> Recusar</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row">
+          <div class="col-12 cards">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore, ratione eaque.</p>
+            <div class="row justify-content-between">
+              <div>
+                <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
+              </div>
+              <div>
+                <small><i class="fa fa-ban"></i> Erro de sistema</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 cards">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore, ratione eaque.</p>
+            <div class="row justify-content-between">
+              <div>
+                <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
+              </div>
+              <div>
+                <small><i class="fa fa-ban"></i> Erro de sistema</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -90,7 +58,7 @@
       <div class="table-responsive p-4 bg-light shadow box">
         <div class="row">
           <div class="col-11">
-            <h2 class="titulo">Em análise</h2>
+            <h2 class="titulo">Em Progresso</h2>
           </div>
           <div class="col-1">
             <div class="dropdown">
@@ -105,39 +73,11 @@
             </div>
           </div>
         </div>
-        <table class="table table-hover bg-white shadow">
-          <thead class="dark">
-            <tr>
-              <td>Prioridade</td>
-              <td>Título</td>
-              <td>Progresso</td>
-              <td>Opções</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Alta</td>
-              <td>Aplicativo Jornada</td>
-              <td>
-                <div class="progress">
-                  <div class="bg-dark progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-                </div>
-              </td>
-              <td>
-                <div class="dropdown">
-                  <a type="button" id="dropdownjoinha" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-cogs fa-1em"></i>
-                  </a>
-                  <div class="dropdown-menu shadow" aria-labelledby="dropdownjoinha">
-                    <a class="dropdown-item"><i class="fas fa-search"></i> Detalhes</a>
-                    <a class="dropdown-item"><i class="fas fa-check"></i> Concluído</a>
-                    <a class="dropdown-item"><i class="fas fa-ban"></i> Cancelar</a>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="shadow rounded p-3 bg-white my-2">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore, ratione eaque.</p>
+          <small class="float-left"><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
+          <small class="float-right"><i class="fa fa-ban"></i> Erro de sistema</small>
+        </div>
       </div>
     </div>
 

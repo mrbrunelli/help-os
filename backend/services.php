@@ -47,9 +47,9 @@ if (isset($_GET['service'])) {
     $insert = DBCreate('ticket',$ticket);
 
     if ($insert) {
-      Header('Location: ../app/pages/index.php?pg=home&r=success');
+      Header('Location: ../app/pages/index.php?pg=tickets&r=success');
     } else {
-      Header('Location: ../app/pages/index.php?pg=home&r=error'); 
+      Header('Location: ../app/pages/index.php?pg=tickets&r=error'); 
     }
   }
 
@@ -96,7 +96,7 @@ if (isset($_GET['service'])) {
 
         $_SESSION['UsuarioID'] = $busca_usuario[0]['idatendente'];
         $_SESSION['UsuarioNome'] = $busca_usuario[0]['nome'];
-        $_SESSION['UsuarioTipo'] = 2;
+        $_SESSION['UsuarioTipo'] = 3;
         echo 1;
         exit;
       } else {

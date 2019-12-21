@@ -3,7 +3,28 @@
 require_once '../../backend/conexao.php';
 require_once '../../backend/funcoes.php';
 
-$_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
+$_SESSION['UsuarioTipo'] == '1' ? $menu_usuario = "display:none;" : $menu_usuario = "";
+$_SESSION['UsuarioTipo'] == '3' ? $menu_atendente = "display:none;" : $menu_atendente = "";
+
+$pg_tickets = "";
+$pg_dashboard = "";
+$pg_gerencial = "";
+$pg_sobre = "";
+
+if (isset($_GET['pg'])) {
+    if ($_GET['pg'] == 'tickets') {
+        $pg_tickets = "color:black !important;font-weight:bold;";
+    }
+    if ($_GET['pg'] == 'gerencial') {
+        $pg_gerencial =  "color:black !important;font-weight:bold;";
+    }
+    if ($_GET['pg'] == 'dashboard') {
+        $pg_dashboard =  "color:black !important;font-weight:bold;";
+    }
+    if ($_GET['pg'] == 'sobre') {
+        $pg_sobre =  "color:black !important;font-weight:bold;";
+    }
+}
 
 ?>
 <!doctype html>
@@ -90,9 +111,7 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
 
                 </li>
                 <li class="nav-item">
-                    <a href="index.php?pg=home" class="navbar-brand">
-                        <img src="../assets/img/logo.png" width="150" style="transform: scale(1.5)">
-                    </a>
+                    <img src="../assets/img/logo.png" width="150" style="transform: scale(1.5)">
                 </li>
                 <li class="nav-item">
                     <!-- MENU DO USUARIO -->
@@ -116,21 +135,21 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
 
     </header>
     <!-- SEGUNDO NAV -->
-    <nav class="navbar-nav navbar-light bg-light shadow sticky-top">
+    <nav class="navbar-nav navbar-light bg-light shadow sticky-top" style="margin-bottom:50px">
         <ul class="navbar nav justify-content-around py-3 container">
-            <li class="nav-item">
-                <a href="index.php?pg=home" class="nav-link">Home</a>
+            <li class="nav-item" style="<?= $menu_atendente; ?>">
+                <a href=" index.php?pg=tickets" class="nav-link" style="<?= $pg_tickets; ?>"> <i class="fas fa-clipboard-list"></i> Tickets</a>
             </li>
-            <li class="nav-item" <?php echo $menu; ?>>
-                <a href="index.php?pg=gerencial" class="nav-link">Gerencial</a>
+            <li class="nav-item" style="<?= $menu_usuario; ?>">
+                <a href="index.php?pg=gerencial" class="nav-link" style="<?= $pg_gerencial; ?>"> <i class="fa fa-cogs"></i> Gerencial</a>
             </li>
-            <li class="nav-item" <?php echo $menu; ?>>
-                <a href="index.php?pg=relatorio" class="nav-link">Relatório</a>
+            <li class="nav-item" style="<?= $menu_usuario ?>">
+                <a href="index.php?pg=dashboard" class="nav-link" style="<?= $pg_dashboard; ?>"><i class="fas fa-chart-line"></i> Dashboard</a>
             </li>
             <!-- MENU DROPDOWN GERENCIAL  -->
-            <div class="dropdown" <?php echo $menu; ?>>
+            <div class="dropdown" style="<?= $menu_usuario; ?>">
                 <li class="nav-item">
-                    <a href="" class="nav-link dropdown-toggle" id="dropdown-gerencial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
+                    <a href="" class="nav-link dropdown-toggle" id="dropdown-gerencial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-edit"></i> Cadastro</a>
                     <div class="dropdown-menu shadow position-absolute" aria-labelledby="dropdown-gerencial">
                         <!-- LINK QUE ATIVA O MODAL PARA CADASTRAR USUARIOS  -->
                         <a href="" class="dropdown-item" data-toggle="modal" data-target="#add-usuario"><i class="fas fa-plus-circle"></i> Cadastrar usuários</a>
@@ -138,40 +157,7 @@ $_SESSION['UsuarioTipo'] != '2' ? $menu = "style='display:none'" : $menu = "";
                 </li>
             </div>
             <li class="nav-item">
-                <a href="index.php?pg=sobre" class="nav-link">Sobre</a>
+                <a href="index.php?pg=sobre" class="nav-link" style="<?php echo $pg_sobre; ?>"> <i class="fas fa-info-circle"></i> Sobre</a>
             </li>
         </ul>
     </nav>
-
-
-
-
-
-    <?php
-
-    $breadcrumb = 'Meus tickets';
-
-    if (isset($_GET['pg'])) {
-        if ($_GET['pg'] == 'relatorio') {
-            $breadcrumb = "Relatório";
-        }
-        if ($_GET['pg'] == 'gerencial') {
-            $breadcrumb = "Gerencial";
-        }
-        if ($_GET['pg'] == 'sobre') {
-            $breadcrumb = "Sobre";
-        }
-    }
-
-
-    echo '
-        <div class="py-3 container">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb bg-transparent" style="padding: 0.75rem 0rem !important;">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">'. $breadcrumb . '</li>
-                </ol>
-            </nav>
-        </div>';
-
-    ?>
