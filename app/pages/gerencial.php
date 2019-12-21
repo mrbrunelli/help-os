@@ -4,9 +4,9 @@ if ($_SESSION['UsuarioTipo'] == '1') {
 }
 ?>
 
-<div class="container mb-5">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-6 col-lg-4 mt-3">
+<div class="container-fluid mb-5">
+  <div class="row justify-content-around">
+    <div class="col-12 col-md-6 col-lg-3 mt-3">
       <div class="p-3 bg-light shadow box">
         <div class="row">
           <div class="col-10">
@@ -56,7 +56,7 @@ if ($_SESSION['UsuarioTipo'] == '1') {
 
 
 
-    <div class="col-12 col-md-6 col-lg-4 mt-3">
+    <div class="col-12 col-md-6 col-lg-3 mt-3">
       <div class="p-3 bg-light shadow box">
         <div class="row">
           <div class="col-10">
@@ -82,8 +82,8 @@ if ($_SESSION['UsuarioTipo'] == '1') {
               <div>
                 <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
               </div>
-              <div>
-                <small class="bg-warning">Média</small>
+              <div class="bg-warning rounded p-1">
+                <small>Média</small>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ if ($_SESSION['UsuarioTipo'] == '1') {
 
 
 
-    <div class="col-12 col-md-6 col-lg-4 mt-3">
+    <div class="col-12 col-md-6 col-lg-3 mt-3">
       <div class="p-3 bg-light shadow box">
         <div class="row">
           <div class="col-10">

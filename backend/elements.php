@@ -61,11 +61,8 @@ if (isset($_GET['element'])) {
         }
 ?>
         <div class="row">
-            <div class="col-sm-9" style="border-right: solid 1px grey">
+            <div class="col-sm-9" style="border-right: solid 1px #80808029">
                 <div class="row">
-                    <div class="col-sm-12">
-                        <p><?= date('d/m/Y H:i', strtotime($abertura)) ?> </p>
-                    </div>
                     <div class="col-sm-12">
                         <h2><?= $titulo ?> </h2>
                     </div>
@@ -91,7 +88,21 @@ if (isset($_GET['element'])) {
                     <div class="col-sm-12">
                         <br>
                         <img src="../assets/img/user.png" width="25" height="25"> Armando Neto - <small><?= date('d/m/y H:i') ?></small>
-                        <textarea rows="2" class="form-control" disabled>Segue o protótipo dos indicadores em anexo</textarea>
+                        <textarea rows="2" class="form-control" disabled>Segue o protótipo dos indicadores em anexo</textarea><br><br>
+                    </div>
+
+
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-sm-11">
+                                <textarea rows="2" class="form-control" placeholder="Adicionar um comentário"></textarea>
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-primary" style="width:100%;height:100%">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -100,6 +111,9 @@ if (isset($_GET['element'])) {
                 <div class="row">
                     <div class="col-sm-12">
                         <h4>Detalhes</h4>
+                    </div>
+                    <div class="col-sm-12">
+                        <p>Abertura: <b> <?= date('d/m/Y H:i', strtotime($abertura)) ?> </b> </p>
                     </div>
                     <div class="col-sm-12">
                         <p>Situação: <b><?= $situacao ?></b></p>
