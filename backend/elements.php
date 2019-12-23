@@ -93,15 +93,14 @@ if (isset($_GET['element'])) {
 
 
                     <div class="col-12">
-                        <div class="row">
-                            <div class="col-sm-11">
-                                <textarea rows="2" class="form-control" placeholder="Adicionar um comentário"></textarea>
-                            </div>
-                            <div class="col-sm-1">
-                                <button type="button" class="btn btn-primary" style="width:100%;height:100%">
-                                    <i class="fa fa-plus"></i>
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <div class="input-group-prepend">
+                                <button type="button" class="btn btn-primary input-group-text" style="width:100%;height:100%">
+                                    <i class="fas fa-paper-plane"></i>
                                 </button>
                             </div>
+                            
                         </div>
                     </div>
 
