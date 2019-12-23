@@ -79,14 +79,22 @@ if ($_SESSION['UsuarioTipo'] == '1') {
           <div class="col-12 cards">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore, ratione eaque.</p>
             <div class="row justify-content-between">
-              <div>
+              <div class="bg-warning p-1 rounded text-light">
                 <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
               </div>
-              <div class="bg-warning rounded p-1">
-                <small><i class="fas fa-exclamation"></i> Média</small>
+              <div>
+                <img src="../assets/img/user.png" width="30">
               </div>
-              <div class="bg-warning rounded p-1">
-                <img src=".." alt="">
+            </div>
+          </div>
+          <div class="col-12 cards">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore, ratione eaque.</p>
+            <div class="row justify-content-between">
+              <div class="bg-danger p-1 rounded text-light">
+                <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
+              </div>
+              <div>
+                <img src="../assets/img/user.png" width="30">
               </div>
             </div>
           </div>
@@ -119,11 +127,11 @@ if ($_SESSION['UsuarioTipo'] == '1') {
           <div class="col-12 cards">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore, ratione eaque.</p>
             <div class="row justify-content-between">
-              <div>
+              <div class="bg-primary rounded p-1 text-light">
                 <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
               </div>
               <div>
-                <small><i class="fa fa-ban"></i> Erro de sistema</small>
+                <img src="../assets/img/user.png" width="30">
               </div>
             </div>
           </div>
