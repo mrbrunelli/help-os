@@ -96,7 +96,7 @@ if (isset($_GET['element'])) {
                         <div class="input-group">
                             <textarea rows="2" class="form-control" placeholder="Digite a mensagem..."></textarea>
                             <div class="input-group-prepend">
-                                <button type="button" class="btn btn-primary input-group-text" style="width:100%;height:100%">
+                                <button type="button" class="btn btn-dark input-group-text" style="width:100%;height:100%">
                                     <i class="fas fa-paper-plane"></i>
                                 </button>
                             </div>

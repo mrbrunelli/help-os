@@ -60,7 +60,7 @@
         color: #222;
         font-weight: lighter;
         font-size: 20px !important;
-        border-bottom: 1px solid lightgrey !important;
+        border-bottom: 1px solid rgb(175, 170, 170) !important;
     }
     
     #div-center {
@@ -68,10 +68,10 @@
         height: 500px;
         position: absolute;
         left: 15%;
-        top: 10%;
-        /* border-radius: 20px; */
+        top: 15%;
+        border-radius: 20px;
         padding: 20px;
-        background-color: rgba(255, 255, 255, 0.02);
+        /* background-color: rgba(0, 0, 0, 0.8); */
     }
     
     #background-login {
@@ -150,23 +150,35 @@
         transform: scale(1.2);
         box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.50);
     }
-    /* .alta {
-        color: #c0392b;
-        display: table-cell;
-        font-weight: bolder;
+    
+    .alta {
+        background-color: rgba(192, 57, 43, 0.5);
+        color: white;
     }
     
     .media {
-        color: #f1c40f;
-        display: table-cell;
-        font-weight: bolder;
+        background-color: rgba(241, 196, 15, 0.5);
+        color: white;
     }
     
     .baixa {
-        color: #3498db;
-        display: table-cell;
-        font-weight: bolder;
-    } */
+        background-color: rgba(52, 152, 219, 0.5);
+        color: white;
+    }
+    
+    .alta:hover {
+        background-color: rgba(192, 57, 43, 0.8);
+        color: white;
+    }
+    
+    .media:hover {
+        background-color: rgba(241, 196, 15, 0.8);
+        color: white;
+    }
+    
+    .baixa:hover {
+        background-color: rgba(52, 152, 219, 0.8);
+    }
     /* ------------------------------------------------------- CONTEUDO DA PAGINA GERENCIAL */
     
     .cards {

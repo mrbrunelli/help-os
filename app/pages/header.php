@@ -106,6 +106,16 @@ if (isset($_GET['pg'])) {
                         }
                         sp.addEventListener('click', changeClass);
                         shclose.addEventListener('click', closesearch);
+
+
+                        // FUNCAO PARA RECONHECER O ENTER
+                        const inputEnter = document.getElementById('idticket_search')
+                        inputEnter.addEventListener('keyup', function(e) {
+                            var key = e.which || e.keyCode
+                            if (key == 13) {
+                                modalTicket($('#idticket_search').val())
+                            }
+                        })
                     </script>
 
 

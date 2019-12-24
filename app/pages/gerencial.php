@@ -79,7 +79,7 @@ if ($_SESSION['UsuarioTipo'] == '1') {
           <div class="col-12 cards">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore, ratione eaque.</p>
             <div class="row justify-content-between">
-              <div class="bg-warning p-1 rounded text-light">
+              <div class="media p-1 rounded text-light">
                 <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
               </div>
               <div>
@@ -90,7 +90,7 @@ if ($_SESSION['UsuarioTipo'] == '1') {
           <div class="col-12 cards">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore, ratione eaque.</p>
             <div class="row justify-content-between">
-              <div class="bg-danger p-1 rounded text-light">
+              <div class="alta p-1 rounded text-light">
                 <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
               </div>
               <div>
@@ -127,7 +127,7 @@ if ($_SESSION['UsuarioTipo'] == '1') {
           <div class="col-12 cards">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore, ratione eaque.</p>
             <div class="row justify-content-between">
-              <div class="bg-primary rounded p-1 text-light">
+              <div class="baixa rounded p-1 text-light">
                 <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
               </div>
               <div>

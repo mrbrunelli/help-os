@@ -20,7 +20,7 @@
     <div id="particles-js"></div>
 
     <!-- FORMULARIO -->
-    <div class="row z-depth-1" id="div-center">
+    <div class="row " id="div-center">
         <div class="col s12">
             <div class="row">
                 <h1 class="center font-weight-lighter grey-text text-lighten-2">
@@ -228,6 +228,15 @@
             }
 
         }
+
+        // FUNCAO PARA RECONHECER O ENTER
+        const inputEnter = document.getElementById('senha')
+        inputEnter.addEventListener('keyup', function(e) {
+            var key = e.which || e.keyCode
+            if (key == 13) {
+                login()
+            }
+        })
     </script>
 
 </body>
