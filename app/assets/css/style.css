@@ -4,14 +4,14 @@
     }
     
      ::-webkit-scrollbar {
-        width: 12px;
+        width: 7px;
     }
     
      ::-webkit-scrollbar-thumb {
         -webkit-border-radius: 10px;
         border-radius: 10px;
-        background-color: #424242;
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        background-color: #33333380;
+        /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); */
     }
     
     .form-control {
@@ -197,7 +197,7 @@
     
     .box {
         border-radius: 0px;
-        min-height: 500px
+        min-height: 600px;
     }
     
     .dark {
@@ -235,6 +235,12 @@
     .foto:hover {
         transform: scale(2.5);
         box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    }
+    
+    .scroll {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 500px;
     }
     /* -----------------------------------------------------CONTEUDO DA PAGINA SOBRE  */
     
