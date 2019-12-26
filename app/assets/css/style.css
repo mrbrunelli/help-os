@@ -225,6 +225,17 @@
     .dropdown-item {
         cursor: pointer;
     }
+    
+    .foto {
+        width: 30px;
+        border-radius: 50%;
+        transition: 500ms;
+    }
+    
+    .foto:hover {
+        transform: scale(2.5);
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    }
     /* -----------------------------------------------------CONTEUDO DA PAGINA SOBRE  */
     
     .sobre {

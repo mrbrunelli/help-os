@@ -65,3 +65,15 @@ const modalTicket = (idticket, titulo) => {
 const limit = (val) => {
     $('#countCaracter').html(val.length)
 }
+
+const situacaoTicket = (idsituacaoticket, idticket) => {
+    $.ajax({
+        url: '../../backend/services.php?service=situacaoTicket',
+        type: 'post',
+        async: true,
+        data: { idsituacaoticket, idticket },
+        success: function(result) {
+            console.log(result)
+        }
+    })
+}

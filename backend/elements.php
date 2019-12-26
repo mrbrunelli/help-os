@@ -96,11 +96,11 @@ if (isset($_GET['element'])) {
                         <div class="input-group">
                             <textarea rows="2" class="form-control" placeholder="Digite a mensagem..."></textarea>
                             <div class="input-group-prepend">
-                                <button type="button" class="btn btn-dark input-group-text" style="width:100%;height:100%">
+                                <button type="button" class="btn btn-dark input-group-text">
                                     <i class="fas fa-paper-plane"></i>
                                 </button>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -114,9 +114,27 @@ if (isset($_GET['element'])) {
                     <div class="col-sm-12">
                         <p>Abertura: <b> <?= date('d/m/Y H:i', strtotime($abertura)) ?> </b> </p>
                     </div>
-                    <div class="col-sm-12">
-                        <p>Situação: <b><?= $situacao ?></b></p>
-                    </div>
+                    <?php
+                    session_start();
+                    if ($_SESSION['UsuarioTipo'] == 3) {
+
+                    ?>
+                        <div class="col-sm-12">
+                            <!-- <p>Situação: <b><?= $situacao ?></b></p> -->
+                            <p>Situação: <b><?= $situacao ?></b></p>
+                            <div class="form-group">
+                                <label for="idsituacaoticket"><small><b>Alterar Situação: </b></small></label>
+
+                                <select name="idsituacaoticket" id="idsituacaoticket" class="form-control" onchange="situacaoTicket(this.value, <?= $_GET['idticket'] ?>)">
+                                    <?php
+                                    foreach (DBRead('situacao_ticket') as $situacaoticket) {
+                                        echo '<option value="' . $situacaoticket['idsituacaoticket'] . '">' . $situacaoticket['nome'] . '</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                    <?php } ?>
                     <div class="col-sm-12">
                         <p>Tipo: <b><?= $tipo ?></b></p>
                     </div>
@@ -134,12 +152,12 @@ if (isset($_GET['element'])) {
                         <h4>Anexos</h4>
                     </div>
                     <div class="col-sm-12 py-2">
-                        <button class="btn btn-primary" type="button">
+                        <button class="btn btn-dark" type="button">
                             <i class="fa fa-download"></i> Print-tela.png
                         </button>
                     </div>
                     <div class="col-sm-12 py-2">
-                        <button class="btn btn-primary" type="button">
+                        <button class="btn btn-dark" type="button">
                             <i class="fa fa-download"></i> Print-erro.png
                         </button>
                     </div>
@@ -182,7 +200,7 @@ if (isset($_GET['element'])) {
         $fields = " t.* 
                     ,c.nome as categoria
                     ,tp.nome as tipo
-                    ,a.nome as atendente
+                    ,substring_index(a.nome, ' ', 1) as atendente
                     ,s.nome as situacao
                     ,pt.nome as prioridade
                     ,pt.cor
@@ -225,7 +243,7 @@ if (isset($_GET['element'])) {
                     <th scope="col"><b>Status</b></th>
                     <th scope="col"><b>Categoria</b></th>
                     <th scope="col"><b>Tipo</b></th>
-                    <th scope="col"><b>Atendente</b></th>
+                    <th scope="col" style="width: 160px;"><b>Atendente</b></th>
                     <th scope="col"><b>Progresso</b></th>
                 </tr>
             </thead>
@@ -234,7 +252,7 @@ if (isset($_GET['element'])) {
             foreach ($tickets as $d) {
 
 
-                $d['atendente'] ? $atendente = '<img src="../assets/img/user.png" width="20" alt=""> ' . $d['atendente'] : $atendente = '';
+                $d['atendente'] ? $atendente = '<img src="../' . $d['foto'] . '" class="foto"> ' . $d['atendente'] : $atendente = '';
                 $d['situacao'] == 'Pendente' ? $sts = "black" : $sts = "lightgrey";
                 $d['progresso'] == 100 ? $bg_prog = "bg-success" : $bg_prog = "bg-dark";
 

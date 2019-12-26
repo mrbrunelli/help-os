@@ -111,6 +111,7 @@ if (isset($_GET['pg'])) {
                         // FUNCAO PARA RECONHECER O ENTER
                         const inputEnter = document.getElementById('idticket_search')
                         inputEnter.addEventListener('keyup', function(e) {
+                            // which lê o código da tecla
                             var key = e.which || e.keyCode
                             if (key == 13) {
                                 modalTicket($('#idticket_search').val())

@@ -7,28 +7,35 @@ if (isset($_GET['service'])) {
 
 
 
-  if ($_GET['service'] == 'ticket') { 
+  if ($_GET['service'] == 'situacaoTicket') {
+    $params = array(
+      'idsituacaoticket' => $_POST['idsituacaoticket']
+    );
+    DBUpDate('ticket', $params, "idticket = {$_POST['idticket']}");
+  }
+
+  if ($_GET['service'] == 'ticket') {
     session_start();
     $useragent = $_SERVER['HTTP_USER_AGENT'];
-    if (preg_match('|MSIE ([0-9].[0-9]{1,2})|',$useragent,$matched)) {
-      $browser_version=$matched[1];
+    if (preg_match('|MSIE ([0-9].[0-9]{1,2})|', $useragent, $matched)) {
+      $browser_version = $matched[1];
       $browser = 'IE';
-    } elseif (preg_match( '|Opera/([0-9].[0-9]{1,2})|',$useragent,$matched)) {
-      $browser_version=$matched[1];
+    } elseif (preg_match('|Opera/([0-9].[0-9]{1,2})|', $useragent, $matched)) {
+      $browser_version = $matched[1];
       $browser = 'Opera';
-    } elseif(preg_match('|Firefox/([0-9\.]+)|',$useragent,$matched)) {
-      $browser_version=$matched[1];
+    } elseif (preg_match('|Firefox/([0-9\.]+)|', $useragent, $matched)) {
+      $browser_version = $matched[1];
       $browser = 'Firefox';
-    } elseif(preg_match('|Chrome/([0-9\.]+)|',$useragent,$matched)) {
-      $browser_version=$matched[1];
+    } elseif (preg_match('|Chrome/([0-9\.]+)|', $useragent, $matched)) {
+      $browser_version = $matched[1];
       $browser = 'Chrome';
-    } elseif(preg_match('|Safari/([0-9\.]+)|',$useragent,$matched)) {
-      $browser_version=$matched[1];
+    } elseif (preg_match('|Safari/([0-9\.]+)|', $useragent, $matched)) {
+      $browser_version = $matched[1];
       $browser = 'Safari';
     } else {
       // browser not recognized!
       $browser_version = null;
-      $browser= 'desconhecido';
+      $browser = 'desconhecido';
     }
 
     $ticket = array(
@@ -44,12 +51,12 @@ if (isset($_GET['service'])) {
       'idprioridadeticket' => 1
     );
 
-    $insert = DBCreate('ticket',$ticket);
+    $insert = DBCreate('ticket', $ticket);
 
     if ($insert) {
       Header('Location: ../app/pages/index.php?pg=tickets&r=success');
     } else {
-      Header('Location: ../app/pages/index.php?pg=tickets&r=error'); 
+      Header('Location: ../app/pages/index.php?pg=tickets&r=error');
     }
   }
 

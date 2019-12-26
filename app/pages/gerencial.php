@@ -26,14 +26,14 @@ if ($_SESSION['UsuarioTipo'] == '1') {
           </div>
         </div>
         <div class="row">
-          <div class="col-12 cards">
+          <div class="col-12 cards" draggable="true">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod labore, ratione eaque.</p>
             <div class="row justify-content-between">
               <div>
                 <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
               </div>
               <div>
-                <small><i class="fa fa-ban"></i> Erro de sistema</small>
+                <small><i class="fa fa-ban"></i></small>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@ if ($_SESSION['UsuarioTipo'] == '1') {
                 <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
               </div>
               <div>
-                <small><i class="fa fa-ban"></i> Erro de sistema</small>
+                <small><i class="fa fa-ban"></i></small>
               </div>
             </div>
           </div>
@@ -83,7 +83,10 @@ if ($_SESSION['UsuarioTipo'] == '1') {
                 <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
               </div>
               <div>
-                <img src="../assets/img/user.png" width="30">
+                <small><i class="fas fa-question"></i></small>
+              </div>
+              <div>
+                <img src="../assets/img/mrbrunelli.jpg" class="foto">
               </div>
             </div>
           </div>
@@ -94,7 +97,10 @@ if ($_SESSION['UsuarioTipo'] == '1') {
                 <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
               </div>
               <div>
-                <img src="../assets/img/user.png" width="30">
+                <small><i class="fas fa-code"></i></small>
+              </div>
+              <div>
+                <img src="../assets/img/armandobretas.jpg" class="foto">
               </div>
             </div>
           </div>
@@ -131,7 +137,10 @@ if ($_SESSION['UsuarioTipo'] == '1') {
                 <small><i class="fa fa-clock"></i> 29/12/1994 12:00</small>
               </div>
               <div>
-                <img src="../assets/img/user.png" width="30">
+                <small><i class="fas fa-ban"></i></small>
+              </div>
+              <div>
+                <img src="../assets/img/mrbrunelli.jpg" class="foto">
               </div>
             </div>
           </div>
