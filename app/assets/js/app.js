@@ -78,4 +78,16 @@ const situacaoTicket = (idsituacaoticket, idticket, idatendente) => {
     })
 }
 
+const prioridadeTicket = (idprioridadeticket, idticket, idatendente) => {
+    $.ajax({
+        url: '../../backend/services.php?service=prioridadeTicket',
+        type: 'post',
+        async: true,
+        data: { idprioridadeticket, idticket, idatendente },
+        success: function(result) {
+            conteudoGerencial()
+        }
+    })
+}
+
 const conteudoGerencial = () => $('#conteudoGerencial').load('../../backend/elements.php?element=conteudoGerencial')

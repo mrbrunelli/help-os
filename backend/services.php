@@ -15,6 +15,14 @@ if (isset($_GET['service'])) {
     DBUpDate('ticket', $params, "idticket = {$_POST['idticket']}");
   }
 
+  if ($_GET['service'] == 'prioridadeTicket') {
+    $params = array(
+      'idprioridadeticket' => $_POST['idprioridadeticket'],
+      'idatendente' => $_POST['idatendente'],
+    );
+    DBUpDate('ticket', $params, "idticket = {$_POST['idticket']}");
+  }
+
   if ($_GET['service'] == 'ticket') {
     session_start();
     $useragent = $_SERVER['HTTP_USER_AGENT'];

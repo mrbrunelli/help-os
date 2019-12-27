@@ -151,6 +151,13 @@
         box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.50);
     }
     
+    .circulo {
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        align-self: center;
+    }
+    
     .alta {
         background-color: rgba(192, 57, 43, 0.5);
         color: white;
@@ -168,12 +175,10 @@
     
     .alta:hover {
         background-color: rgba(192, 57, 43, 0.8);
-        color: white;
     }
     
     .media:hover {
         background-color: rgba(241, 196, 15, 0.8);
-        color: white;
     }
     
     .baixa:hover {

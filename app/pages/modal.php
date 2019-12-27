@@ -198,7 +198,13 @@
   <div class="modal fade" id="modalTicket" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
+        <!-- <div class="">
+          <div class="bg-dark text-light col-12 text-center">
+            <h1 class="font-weight-light py-3">Detalhes</h1>
+          </div>
+        </div> -->
         <div class="modal-body" id="conteudoTicket">
+
         </div>
         <div class="modal-footer">
           <button type="reset" class="btn btn-light" data-dismiss="modal"><i class="far fa-times-circle"></i> Fechar</button>

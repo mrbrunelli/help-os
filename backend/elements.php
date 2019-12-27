@@ -32,34 +32,37 @@ if (isset($_GET['element'])) {
           <div class="row">
 
             <?php
-            foreach (tickets(1) as $ticket) {
+            $d = tickets(1);
+            if ($d > 0) {
+              foreach (tickets(1) as $ticket) {
 
-              switch ($ticket['idtipoticket']) {
-                case '1':
-                  $emoji = '<i class="fas fa-question" title="Dúvidas de usuário"></i> ';
-                  break;
-                case '2':
-                  $emoji = '<i class="fa fa-ban" title="Erros de sistema"></i> ';
-                  break;
-                case '3':
-                  $emoji = '<i class="fas fa-code" title="Desenvolvimento"></i> ';
-                  break;
-              }
+                switch ($ticket['idtipoticket']) {
+                  case '1':
+                    $emoji = '<i class="fas fa-question" title="Dúvidas de usuário"></i> ';
+                    break;
+                  case '2':
+                    $emoji = '<i class="fa fa-ban" title="Erros de sistema"></i> ';
+                    break;
+                  case '3':
+                    $emoji = '<i class="fas fa-code" title="Desenvolvimento"></i> ';
+                    break;
+                }
             ?>
 
-              <div class="col-12 cards" onclick="modalTicket('<?= $ticket['idticket'] ?>')">
-                <p><?= $ticket['titulo'] ?></p>
-                <div class="row justify-content-between">
-                  <div>
-                    <small><i class="fa fa-clock"></i> <?= date('d/m/y H:i', strtotime($ticket['datahoraabertura'])) ?></small>
-                  </div>
-                  <div>
-                    <small><?= $emoji ?></small>
+                <div class="col-12 cards" onclick="modalTicket('<?= $ticket['idticket'] ?>')">
+                  <p><?= $ticket['titulo'] ?></p>
+                  <div class="row justify-content-between">
+                    <div>
+                      <small><i class="fa fa-clock"></i> <?= date('d/m/y H:i', strtotime($ticket['datahoraabertura'])) ?></small>
+                    </div>
+                    <div>
+                      <small><?= $emoji ?></small>
+                    </div>
                   </div>
                 </div>
-              </div>
 
             <?php
+              }
             }
             ?>
 
@@ -125,11 +128,13 @@ if (isset($_GET['element'])) {
                 <div class="col-12 cards" onclick="modalTicket('<?= $ticket['idticket'] ?>')">
                   <p><?= $ticket['titulo'] ?></p>
                   <div class="row justify-content-between">
-                    <div class="<?= $prioridade ?> p-1 rounded text-light">
+                    <div>
                       <small><i class="fa fa-clock"></i> <?= date('d/m/y H:i', strtotime($ticket['dataprevisao'])) ?></small>
                     </div>
                     <div>
                       <small><?= $emoji ?></small>
+                    </div>
+                    <div class="<?= $prioridade ?> circulo">
                     </div>
                     <div>
                       <img src="../<?= $foto ?>" class="foto">
@@ -204,12 +209,13 @@ if (isset($_GET['element'])) {
                 <div class="col-12 cards" onclick="modalTicket('<?= $ticket['idticket'] ?>')">
                   <p><?= $ticket['titulo'] ?></p>
                   <div class="row justify-content-between">
-                    <div class="<?= $prioridade ?> rounded p-1 text-light">
+                    <div>
                       <small><i class="fa fa-clock"></i> <?= date('d/m/y H:i', strtotime($ticket['datahorafechamento'])) ?></small>
                     </div>
                     <div>
                       <small><?= $emoji ?></small>
                     </div>
+                    <div class="<?= $prioridade ?> circulo"></div>
                     <div>
                       <img src="../<?= $foto ?>" class="foto">
                     </div>
@@ -265,6 +271,7 @@ if (isset($_GET['element'])) {
     $atendente = $ticket[0]['atendente'];
     $abertura = $ticket[0]['datahoraabertura'];
     $idsituacaoticket = $ticket[0]['idsituacaoticket'];
+    $idprioridadeticket = $ticket[0]['idprioridadeticket'];
     switch ($nav) {
 
       case 'Chrome':
@@ -352,6 +359,15 @@ if (isset($_GET['element'])) {
                   foreach (DBRead('situacao_ticket') as $situacaoticket) {
                     $situacaoticket['idsituacaoticket'] == $idsituacaoticket ? $selected = "selected" : $selected = "";
                     echo '<option ' . $selected . ' value="' . $situacaoticket['idsituacaoticket'] . '">' . $situacaoticket['nome'] . '</option>';
+                  }
+                  ?>
+                </select>
+                <label for="idprioridadeticket"><small><b>Prioridade: </b></small></label>
+                <select name="idprioridadeticket" id="idprioridadeticket" class="form-control" onchange="prioridadeTicket(this.value, '<?= $_GET['idticket'] ?>', '<?= $_SESSION['UsuarioID'] ?>')">
+                  <?php
+                  foreach (DBRead('prioridade_ticket') as $prioridadeticket) {
+                    $prioridadeticket['idprioridadeticket'] == $idprioridadeticket ? $selected = "selected" : $selected = "";
+                    echo '<option ' . $selected . ' value="' . $prioridadeticket['idprioridadeticket'] . '">' . $prioridadeticket['nome'] . '</option>';
                   }
                   ?>
                 </select>
