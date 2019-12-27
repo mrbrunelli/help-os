@@ -43,7 +43,7 @@ if ($_SESSION['UsuarioTipo'] == '1') {
             }
           ?>
 
-            <div class="col-12 cards" draggable="true">
+            <div class="col-12 cards" draggable="true" onclick="modalTicket()">
               <p><?= $ticket['titulo'] ?></p>
               <div class="row justify-content-between">
                 <div>
