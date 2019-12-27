@@ -43,7 +43,7 @@ if ($_SESSION['UsuarioTipo'] == '1') {
             }
           ?>
 
-            <div class="col-12 cards" draggable="true" onclick="modalTicket()">
+            <div class="col-12 cards" onclick="modalTicket('<?= $ticket['idticket'] ?>')">
               <p><?= $ticket['titulo'] ?></p>
               <div class="row justify-content-between">
                 <div>
@@ -122,7 +122,7 @@ if ($_SESSION['UsuarioTipo'] == '1') {
             }
           ?>
 
-            <div class="col-12 cards">
+            <div class="col-12 cards" onclick="modalTicket('<?= $ticket['idticket'] ?>')">
               <p><?= $ticket['titulo'] ?></p>
               <div class="row justify-content-between">
                 <div class="<?= $prioridade ?> p-1 rounded text-light">
@@ -205,7 +205,7 @@ if ($_SESSION['UsuarioTipo'] == '1') {
             }
           ?>
 
-            <div class="col-12 cards">
+            <div class="col-12 cards" onclick="modalTicket('<?= $ticket['idticket'] ?>')">
               <p><?= $ticket['titulo'] ?></p>
               <div class="row justify-content-between">
                 <div class="<?= $prioridade ?> rounded p-1 text-light">

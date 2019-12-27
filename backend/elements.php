@@ -114,6 +114,7 @@ if (isset($_GET['element'])) {
           <div class="col-sm-12">
             <p>Abertura: <b> <?= date('d/m/Y H:i', strtotime($abertura)) ?> </b> </p>
           </div>
+
           <?php
           session_start();
           if ($_SESSION['UsuarioTipo'] == 3) {
@@ -126,6 +127,7 @@ if (isset($_GET['element'])) {
                 <label for="idsituacaoticket"><small><b>Alterar Situação: </b></small></label>
 
                 <select name="idsituacaoticket" id="idsituacaoticket" class="form-control" onchange="situacaoTicket(this.value, <?= $_GET['idticket'] ?>)">
+                  <option value=""></option>
                   <?php
                   foreach (DBRead('situacao_ticket') as $situacaoticket) {
                     echo '<option value="' . $situacaoticket['idsituacaoticket'] . '">' . $situacaoticket['nome'] . '</option>';
@@ -134,7 +136,11 @@ if (isset($_GET['element'])) {
                 </select>
               </div>
             </div>
-          <?php } ?>
+
+          <?php
+          }
+          ?>
+
           <div class="col-sm-12">
             <p>Tipo: <b><?= $tipo ?></b></p>
           </div>
