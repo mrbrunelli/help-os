@@ -66,14 +66,16 @@ const limit = (val) => {
     $('#countCaracter').html(val.length)
 }
 
-const situacaoTicket = (idsituacaoticket, idticket) => {
+const situacaoTicket = (idsituacaoticket, idticket, idatendente) => {
     $.ajax({
         url: '../../backend/services.php?service=situacaoTicket',
         type: 'post',
         async: true,
-        data: { idsituacaoticket, idticket },
+        data: { idsituacaoticket, idticket, idatendente },
         success: function(result) {
-            console.log(result)
+            conteudoGerencial()
         }
     })
 }
+
+const conteudoGerencial = () => $('#conteudoGerencial').load('../../backend/elements.php?element=conteudoGerencial')

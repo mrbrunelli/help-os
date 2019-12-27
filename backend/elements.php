@@ -7,26 +7,249 @@ require_once 'funcoes.php';
 
 if (isset($_GET['element'])) {
 
+  if ($_GET['element'] == 'conteudoGerencial') {
+?>
+    <div class="row justify-content-between">
+      <div class="col-12 col-md-6 col-lg-4 mt-3">
+        <div class="p-3 bg-light shadow box scroll">
+          <div class="row">
+            <div class="col-10">
+              <h2 class="titulo">Pendente</h2>
+            </div>
+            <div class="col-2">
+              <div class="dropdown">
+                <a type="button" id="dropdownconfig" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></a>
+                <div class="dropdown-menu shadow" aria-labelledby="dropdownconfig">
+                  <h6 class="dropdown-header">Ações</h6>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item"><i class="far fa-share-square"></i> Compartilhar</a>
+                  <a class="dropdown-item"><i class="fas fa-print"></i> Imprimir</a>
+                  <a class="dropdown-item"><i class="fas fa-download"></i> Exportar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+            <?php
+            foreach (tickets(1) as $ticket) {
+
+              switch ($ticket['idtipoticket']) {
+                case '1':
+                  $emoji = '<i class="fas fa-question" title="Dúvidas de usuário"></i> ';
+                  break;
+                case '2':
+                  $emoji = '<i class="fa fa-ban" title="Erros de sistema"></i> ';
+                  break;
+                case '3':
+                  $emoji = '<i class="fas fa-code" title="Desenvolvimento"></i> ';
+                  break;
+              }
+            ?>
+
+              <div class="col-12 cards" onclick="modalTicket('<?= $ticket['idticket'] ?>')">
+                <p><?= $ticket['titulo'] ?></p>
+                <div class="row justify-content-between">
+                  <div>
+                    <small><i class="fa fa-clock"></i> <?= date('d/m/y H:i', strtotime($ticket['datahoraabertura'])) ?></small>
+                  </div>
+                  <div>
+                    <small><?= $emoji ?></small>
+                  </div>
+                </div>
+              </div>
+
+            <?php
+            }
+            ?>
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col-12 col-md-6 col-lg-4 mt-3">
+        <div class="p-3 bg-light shadow box scroll">
+          <div class="row">
+            <div class="col-10">
+              <h2 class="titulo">Em Progresso</h2>
+            </div>
+            <div class="col-2">
+              <div class="dropdown">
+                <a type="button" id="dropdownconfig" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></a>
+                <div class="dropdown-menu shadow" aria-labelledby="dropdownconfig">
+                  <h6 class="dropdown-header">Ações</h6>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item"><i class="far fa-share-square"></i> Compartilhar</a>
+                  <a class="dropdown-item"><i class="fas fa-print"></i> Imprimir</a>
+                  <a class="dropdown-item"><i class="fas fa-download"></i> Exportar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+            <?php
+            $d = tickets(2);
+            if ($d > 0) {
+              foreach ($d as $ticket) {
+                $foto = $ticket['foto'];
+                switch ($ticket['idtipoticket']) {
+                  case '1':
+                    $emoji = '<i class="fas fa-question" title="Dúvidas de usuário"></i> ';
+                    break;
+                  case '2':
+                    $emoji = '<i class="fa fa-ban" title="Erros de sistema"></i> ';
+                    break;
+                  case '3':
+                    $emoji = '<i class="fas fa-code" title="Desenvolvimento"></i> ';
+                    break;
+                }
+
+                switch ($ticket['idprioridadeticket']) {
+                  case '1':
+                    $prioridade = 'baixa';
+                    break;
+                  case '2':
+                    $prioridade = 'media';
+                    break;
+                  case '3':
+                    $prioridade = 'alta';
+                }
+
+
+
+            ?>
+
+                <div class="col-12 cards" onclick="modalTicket('<?= $ticket['idticket'] ?>')">
+                  <p><?= $ticket['titulo'] ?></p>
+                  <div class="row justify-content-between">
+                    <div class="<?= $prioridade ?> p-1 rounded text-light">
+                      <small><i class="fa fa-clock"></i> <?= date('d/m/y H:i', strtotime($ticket['dataprevisao'])) ?></small>
+                    </div>
+                    <div>
+                      <small><?= $emoji ?></small>
+                    </div>
+                    <div>
+                      <img src="../<?= $foto ?>" class="foto">
+                    </div>
+                  </div>
+                </div>
+
+            <?php
+              }
+            }
+            ?>
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col-12 col-md-6 col-lg-4 mt-3">
+        <div class="p-3 bg-light shadow box scroll">
+          <div class="row">
+            <div class="col-10">
+              <h2 class="titulo">Finalizado</h2>
+            </div>
+            <div class="col-2">
+              <div class="dropdown">
+                <a type="button" id="dropdownconfig" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></a>
+                <div class="dropdown-menu shadow" aria-labelledby="dropdownconfig">
+                  <h6 class="dropdown-header">Ações</h6>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item"><i class="far fa-share-square"></i> Compartilhar</a>
+                  <a class="dropdown-item"><i class="fas fa-print"></i> Imprimir</a>
+                  <a class="dropdown-item"><i class="fas fa-download"></i> Exportar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+
+            <?php
+            $d = tickets(3);
+            if ($d > 0) {
+              foreach ($d  as $ticket) {
+                $foto = $ticket['foto'];
+                switch ($ticket['idprioridadeticket']) {
+                  case '1':
+                    $prioridade = 'baixa';
+                    break;
+                  case '2':
+                    $prioridade = 'media';
+                    break;
+                  case '3':
+                    $prioridade = 'alta';
+                    break;
+                }
+
+                switch ($ticket['idtipoticket']) {
+                  case '1':
+                    $emoji = '<i class="fas fa-question" title="Dúvidas de usuário"></i> ';
+                    break;
+                  case '2':
+                    $emoji = '<i class="fa fa-ban" title="Erros de sistema"></i> ';
+                    break;
+                  case '3':
+                    $emoji = '<i class="fas fa-code" title="Desenvolvimento"></i> ';
+                    break;
+                }
+
+
+            ?>
+
+                <div class="col-12 cards" onclick="modalTicket('<?= $ticket['idticket'] ?>')">
+                  <p><?= $ticket['titulo'] ?></p>
+                  <div class="row justify-content-between">
+                    <div class="<?= $prioridade ?> rounded p-1 text-light">
+                      <small><i class="fa fa-clock"></i> <?= date('d/m/y H:i', strtotime($ticket['datahorafechamento'])) ?></small>
+                    </div>
+                    <div>
+                      <small><?= $emoji ?></small>
+                    </div>
+                    <div>
+                      <img src="../<?= $foto ?>" class="foto">
+                    </div>
+                  </div>
+                </div>
+
+            <?php
+              }
+            }
+            ?>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <?php
+    exit;
+  }
+
   if ($_GET['element'] == 'conteudoTicket') {
 
     $table = "ticket t";
 
-    $params =  "LEFT JOIN usuario u on u.idusuario=t.idusuario
-                    LEFT JOIN categoria_ticket c on c.idcategoriaticket=t.idcategoriaticket
-                    LEFT JOIN tipo_ticket tp on tp.idtipoticket = t.idtipoticket
-                    LEFT JOIN atendente at on at.idatendente=t.idatendente
-                    LEFT JOIN prioridade_ticket p on p.idprioridadeticket = t.idprioridadeticket
-                    LEFT JOIN situacao_ticket s on s.idsituacaoticket=t.idsituacaoticket
-                    where t.idticket = {$_GET['idticket']}";
+    $params = "LEFT JOIN usuario u on u.idusuario=t.idusuario
+    LEFT JOIN categoria_ticket c on c.idcategoriaticket=t.idcategoriaticket
+    LEFT JOIN tipo_ticket tp on tp.idtipoticket = t.idtipoticket
+    LEFT JOIN atendente at on at.idatendente=t.idatendente
+    LEFT JOIN prioridade_ticket p on p.idprioridadeticket = t.idprioridadeticket
+    LEFT JOIN situacao_ticket s on s.idsituacaoticket=t.idsituacaoticket
+    where t.idticket = {$_GET['idticket']}";
 
     $fields = "t.*,
-                    SUBSTRING_INDEX(u.nome,' ',1) as usuario,
-                    c.nome as categoria,
-                    at.nome as atendente,
-                    p.nome as prioridade,
-                    s.nome as situacao,
-                    tp.nome as tipo
-                    ";
+    SUBSTRING_INDEX(u.nome,' ',1) as usuario,
+    c.nome as categoria,
+    at.nome as atendente,
+    p.nome as prioridade,
+    s.nome as situacao,
+    tp.nome as tipo
+    ";
 
     $ticket = DBRead($table, $params, $fields);
     $titulo = $ticket[0]['titulo'];
@@ -41,6 +264,7 @@ if (isset($_GET['element'])) {
     $prioridade = $ticket[0]['prioridade'];
     $atendente = $ticket[0]['atendente'];
     $abertura = $ticket[0]['datahoraabertura'];
+    $idsituacaoticket = $ticket[0]['idsituacaoticket'];
     switch ($nav) {
 
       case 'Chrome':
@@ -59,7 +283,7 @@ if (isset($_GET['element'])) {
         $browser = '<i class="fas fa-question-circle"></i> Desconhecido';
         break;
     }
-?>
+  ?>
     <div class="row">
       <div class="col-sm-9" style="border-right: solid 1px #80808029">
         <div class="row">
@@ -121,16 +345,13 @@ if (isset($_GET['element'])) {
 
           ?>
             <div class="col-sm-12">
-              <!-- <p>Situação: <b><?= $situacao ?></b></p> -->
-              <p>Situação: <b><?= $situacao ?></b></p>
               <div class="form-group">
-                <label for="idsituacaoticket"><small><b>Alterar Situação: </b></small></label>
-
-                <select name="idsituacaoticket" id="idsituacaoticket" class="form-control" onchange="situacaoTicket(this.value, <?= $_GET['idticket'] ?>)">
-                  <option value=""></option>
+                <label for="idsituacaoticket"><small><b> Situação: </b></small></label>
+                <select name="idsituacaoticket" id="idsituacaoticket" class="form-control" onchange="situacaoTicket(this.value,'<?= $_GET['idticket'] ?>','<?= $_SESSION['UsuarioID'] ?>')">
                   <?php
                   foreach (DBRead('situacao_ticket') as $situacaoticket) {
-                    echo '<option value="' . $situacaoticket['idsituacaoticket'] . '">' . $situacaoticket['nome'] . '</option>';
+                    $situacaoticket['idsituacaoticket'] == $idsituacaoticket ? $selected = "selected" : $selected = "";
+                    echo '<option ' . $selected . ' value="' . $situacaoticket['idsituacaoticket'] . '">' . $situacaoticket['nome'] . '</option>';
                   }
                   ?>
                 </select>

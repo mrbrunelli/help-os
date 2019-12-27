@@ -9,7 +9,8 @@ if (isset($_GET['service'])) {
 
   if ($_GET['service'] == 'situacaoTicket') {
     $params = array(
-      'idsituacaoticket' => $_POST['idsituacaoticket']
+      'idsituacaoticket' => $_POST['idsituacaoticket'],
+      'idatendente' => $_POST['idatendente'],
     );
     DBUpDate('ticket', $params, "idticket = {$_POST['idticket']}");
   }

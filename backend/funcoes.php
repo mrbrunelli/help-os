@@ -94,3 +94,12 @@ function DBExecute($query, $insertId = false)
   DBClose($link);
   return $result;
 }
+
+function tickets($idsituacaoticket)
+{
+  $table = "ticket t";
+  $params = "LEFT JOIN atendente a on a.idatendente = t.idatendente
+           where t.idsituacaoticket = $idsituacaoticket";
+  $fields = " t.*, a.foto  ";
+  return DBRead($table, $params, $fields);
+}
