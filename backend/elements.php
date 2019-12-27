@@ -134,7 +134,7 @@ if (isset($_GET['element'])) {
                     <div>
                       <small><?= $emoji ?></small>
                     </div>
-                    <div class="<?= $prioridade ?> circulo">
+                    <div class="<?= $prioridade ?> circulo" title="<?= $prioridade ?>">
                     </div>
                     <div>
                       <img src="../<?= $foto ?>" class="foto">
@@ -215,7 +215,7 @@ if (isset($_GET['element'])) {
                     <div>
                       <small><?= $emoji ?></small>
                     </div>
-                    <div class="<?= $prioridade ?> circulo"></div>
+                    <div class="<?= $prioridade ?> circulo" title="<?= $prioridade ?> "></div>
                     <div>
                       <img src="../<?= $foto ?>" class="foto">
                     </div>
@@ -272,6 +272,7 @@ if (isset($_GET['element'])) {
     $abertura = $ticket[0]['datahoraabertura'];
     $idsituacaoticket = $ticket[0]['idsituacaoticket'];
     $idprioridadeticket = $ticket[0]['idprioridadeticket'];
+    $dataprevisao = $ticket[0]['dataprevisao'];
     switch ($nav) {
 
       case 'Chrome':
@@ -345,6 +346,9 @@ if (isset($_GET['element'])) {
           <div class="col-sm-12">
             <p>Abertura: <b> <?= date('d/m/Y H:i', strtotime($abertura)) ?> </b> </p>
           </div>
+          <div class="col-sm-12">
+            <p>Previsão: <b> <?= date('d/m/Y', strtotime($dataprevisao)) ?> </b></p>
+          </div>
 
           <?php
           session_start();
@@ -355,22 +359,28 @@ if (isset($_GET['element'])) {
               <div class="form-group">
                 <label for="idsituacaoticket"><small><b> Situação: </b></small></label>
                 <select name="idsituacaoticket" id="idsituacaoticket" class="form-control" onchange="situacaoTicket(this.value,'<?= $_GET['idticket'] ?>','<?= $_SESSION['UsuarioID'] ?>')">
+
                   <?php
                   foreach (DBRead('situacao_ticket') as $situacaoticket) {
                     $situacaoticket['idsituacaoticket'] == $idsituacaoticket ? $selected = "selected" : $selected = "";
                     echo '<option ' . $selected . ' value="' . $situacaoticket['idsituacaoticket'] . '">' . $situacaoticket['nome'] . '</option>';
                   }
                   ?>
+
                 </select>
                 <label for="idprioridadeticket"><small><b>Prioridade: </b></small></label>
                 <select name="idprioridadeticket" id="idprioridadeticket" class="form-control" onchange="prioridadeTicket(this.value, '<?= $_GET['idticket'] ?>', '<?= $_SESSION['UsuarioID'] ?>')">
+
                   <?php
                   foreach (DBRead('prioridade_ticket') as $prioridadeticket) {
                     $prioridadeticket['idprioridadeticket'] == $idprioridadeticket ? $selected = "selected" : $selected = "";
                     echo '<option ' . $selected . ' value="' . $prioridadeticket['idprioridadeticket'] . '">' . $prioridadeticket['nome'] . '</option>';
                   }
                   ?>
+
                 </select>
+                <label for="dataprevisao"><small><b>Previsão: </small></label>
+                <input type="date" id="dataprevisao" name="dataprevisao" class="form-control" value="<?= $ticket['dataprevisao'] ?>" onblur="dataPrevisao(this.value, '<?= $_GET['idticket'] ?>', '<?= $_GET['UsuarioID'] ?>')">
               </div>
             </div>
 
