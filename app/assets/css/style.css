@@ -238,7 +238,7 @@
     }
     
     .foto:hover {
-        transform: scale(2.2);
+        transform: scale(2.3);
         box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
     }
     

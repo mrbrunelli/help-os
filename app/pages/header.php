@@ -133,7 +133,7 @@ if (isset($_GET['pg'])) {
 
             <!-- OPÇÕES DO DROPDOWN  -->
             <div class="dropdown-menu shadow dropdown-menu-right position-absolute mr-4 text-center z-index9999" aria-labelledby="dropdownMenu">
-              <h6 class="dropdown-header bg-light"><img src="../assets/img/user.png" width="30px" height="30px"> - <?= $_SESSION['UsuarioNome'] ?> </h6>
+                <h6 class="dropdown-header bg-light"><img src="../" width="30px" height="30px"> - <?= $_SESSION['UsuarioNome'] ?> </h6>
               <a href="" class="dropdown-item"><i class="fas fa-cog"></i> Configurações</a>
               <div class="dropdown-divider"></div>
               <a href="logout.php" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Sair</a>

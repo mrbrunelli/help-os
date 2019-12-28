@@ -129,7 +129,7 @@ if (isset($_GET['element'])) {
                   <p><?= $ticket['titulo'] ?></p>
                   <div class="row justify-content-between">
                     <div>
-                      <small><i class="fa fa-clock"></i> <?= date('d/m/y H:i', strtotime($ticket['dataprevisao'])) ?></small>
+                      <small><i class="fa fa-clock"></i> <?= date('d/m/y', strtotime($ticket['dataprevisao'])) ?></small>
                     </div>
                     <div>
                       <small><?= $emoji ?></small>
@@ -258,6 +258,7 @@ if (isset($_GET['element'])) {
     ";
 
     $ticket = DBRead($table, $params, $fields);
+    $idticket = $ticket[0]['idticket'];
     $titulo = $ticket[0]['titulo'];
     $descricao = $ticket[0]['descricao'];
     $data = $ticket[0]['datahoraabertura'];
@@ -279,8 +280,6 @@ if (isset($_GET['element'])) {
     } else {
       $dataprevisao = date('d/m/Y', strtotime($ticket[0]['dataprevisao']));
     }
-
-    var_dump($dataprevisao);
 
     switch ($nav) {
 
@@ -305,6 +304,9 @@ if (isset($_GET['element'])) {
       <div class="col-sm-9" style="border-right: solid 1px #80808029">
         <div class="row">
           <div class="col-sm-12">
+            <small>
+              <p>Nº Ticket: <?= $idticket ?></p>
+            </small>
             <h2><?= $titulo ?> </h2>
           </div>
           <div class="col-sm-12">
@@ -456,7 +458,8 @@ if (isset($_GET['element'])) {
                     LEFT JOIN atendente a          ON a.idatendente=t.idatendente
                     LEFT JOIN situacao_ticket s    ON s.idsituacaoticket=t.idsituacaoticket
                     LEFT JOIN prioridade_ticket pt ON pt.idprioridadeticket=t.idprioridadeticket
-                    WHERE t.idusuario = $idusuario ";
+                    WHERE t.idusuario = $idusuario
+                    ORDER BY progresso desc";
 
 
     $fields = " t.* 
