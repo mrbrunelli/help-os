@@ -380,7 +380,7 @@ if (isset($_GET['element'])) {
 
                 </select>
                 <label for="dataprevisao"><small><b>Previsão: </small></label>
-                <input type="date" id="dataprevisao" name="dataprevisao" class="form-control" value="<?= $ticket['dataprevisao'] ?>" onblur="dataPrevisao(this.value, '<?= $_GET['idticket'] ?>', '<?= $_GET['UsuarioID'] ?>')">
+                <input type="date" id="dataprevisao" name="dataprevisao" class="form-control" onblur="dataPrevisao(this.value, '<?= $_GET['idticket'] ?>', '<?= $_SESSION['UsuarioID'] ?>')">
               </div>
             </div>
 
@@ -534,7 +534,12 @@ if (isset($_GET['element'])) {
         </table>
         ';
     } else {
-      echo '<p> Nenhum ticket ... </p>';
+      echo '<div class="row justify-content-around my-3">
+              <p class="lead"> Nenhum ticket...  </p>
+              <button type="button" class="btn-add" title="Abrir ticket" data-toggle="modal" data-target="#adicionar">
+                <i class="fas fa-plus text-dark"></i>
+              </button>
+            </div>';
     }
 
     exit;

@@ -15,6 +15,17 @@ if (isset($_GET['service'])) {
     DBUpDate('ticket', $params, "idticket = {$_POST['idticket']}");
   }
 
+
+  if ($_GET['service'] == 'dataPrevisao') {
+    $params = array(
+      'dataprevisao' => $_POST['dataprevisao'],
+      'idatendente' => $_POST['idatendente'],
+    );
+    DBUpDate('ticket', $params, "idticket = {$_POST['idticket']}");
+  } 
+
+
+
   if ($_GET['service'] == 'prioridadeTicket') {
     $params = array(
       'idprioridadeticket' => $_POST['idprioridadeticket'],

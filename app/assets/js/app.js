@@ -90,4 +90,16 @@ const prioridadeTicket = (idprioridadeticket, idticket, idatendente) => {
     })
 }
 
+const dataPrevisao = (dataprevisao, idticket, idatendente) => {
+    $.ajax({
+        url: '../../backend/services.php?service=dataPrevisao',
+        type: 'post',
+        async: true,
+        data: { dataprevisao, idticket, idatendente },
+        success: function(result) {
+            conteudoGerencial()
+        }
+    })
+}
+
 const conteudoGerencial = () => $('#conteudoGerencial').load('../../backend/elements.php?element=conteudoGerencial')
