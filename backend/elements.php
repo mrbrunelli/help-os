@@ -273,6 +273,15 @@ if (isset($_GET['element'])) {
     $idsituacaoticket = $ticket[0]['idsituacaoticket'];
     $idprioridadeticket = $ticket[0]['idprioridadeticket'];
     $dataprevisao = $ticket[0]['dataprevisao'];
+
+    if (is_null($ticket[0]['dataprevisao'])) {
+      $dataprevisao = '-';
+    } else {
+      $dataprevisao = date('d/m/Y', strtotime($ticket[0]['dataprevisao']));
+    }
+
+    var_dump($dataprevisao);
+
     switch ($nav) {
 
       case 'Chrome':
@@ -347,7 +356,7 @@ if (isset($_GET['element'])) {
             <p>Abertura: <b> <?= date('d/m/Y H:i', strtotime($abertura)) ?> </b> </p>
           </div>
           <div class="col-sm-12">
-            <p>Previsão: <b> <?= date('d/m/Y', strtotime($dataprevisao)) ?> </b></p>
+            <p>Previsão: <b> <?= ($dataprevisao) ?> </b></p>
           </div>
 
           <?php
