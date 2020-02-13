@@ -49,7 +49,7 @@ if (isset($_GET['element'])) {
                 }
             ?>
 
-                <div class="col-12 cards" onclick="modalTicket('<?= $ticket['idticket'] ?>')">
+                <div class="col-12 cards" style="word-wrap: break-word;" onclick="modalTicket('<?= $ticket['idticket'] ?>')">
                   <p><?= $ticket['titulo'] ?></p>
                   <div class="row justify-content-between">
                     <div>
