@@ -13,6 +13,7 @@
           <form name="cadastro" id="cadastro">
             <input type="hidden" id="idusuario" value="0">
             <div class="form-row">
+
               <div class="form-group col-md-6">
                 <label for="tipo-usuario"><b>Tipo do usuário: </b></label>
                 <select class="form-control" name="tipo-usuario" id="tipo-usuario">
@@ -23,25 +24,30 @@
                   ?>
                 </select>
               </div>
+
               <div class="form-group col-md-6">
                 <label for="entidade"><b>Entidade: </b></label>
                 <select name="entidade" id="entidade" class="form-control">
                   <option selected>Gazin</option>
                 </select>
               </div>
+
               <div class="form-group col-md-8">
                 <label for="nome"><b>Nome: </b></label>
                 <input type="text" class="form-control" id="nome">
               </div>
+
               <div class="form-group col-md-4" id="div-telefone">
                 <label for="telefone"><b>Telefone: </b></label>
-                <input type="tel" class="form-control" id="telefone" placeholder="(__)_ ____-____">
+                <input type="tel" class="form-control" id="telefone">
               </div>
+
               <div class="form-group col-md-4" id="div-foto" style="display:none">
                 <label for="foto"><b>Foto: </b></label>
                 <input type="file" class="form-control" name="foto[]" id="foto">
                 <small>Tamanho máximo: 500kb</small>
               </div>
+
               <div class="form-group col-md-4" id="div-custohora" style="display: none">
                 <label for="custohora"><b>Custo/Hora: </b></label>
                 <div class="input-group">
@@ -53,14 +59,17 @@
                   <input type="text" class="form-control" id="custohora">
                 </div>
               </div>
+
               <div class="form-group col-md-12">
                 <label for="email"><b>Email: </b></label>
                 <input type="email" class="form-control" id="email" placeholder="exemplo@exemplo.com.br">
               </div>
+
               <div class="form-group col-md-12">
                 <label for="senha"><b>Senha: </b></label>
                 <input type="password" class="form-control" id="senha">
               </div>
+
               <div class="form-group col-md-12">
                 <label for="confirmasenha"><b>Confirmar senha: </b></label>
                 <div class="input-group">
@@ -73,6 +82,7 @@
                   <input type="password" class="form-control" id="confirmasenha" onkeyup="validasenha(this.value)">
                 </div>
               </div>
+              
             </div>
           </form>
 
